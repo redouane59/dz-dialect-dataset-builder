@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns="http://maven.apache.org/POM/4.0.0"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <artifactId>dz-dialect-dataset-builder</artifactId>
+
+  <dependencies>
+    <dependency>
+      <artifactId>junit-jupiter-params</artifactId>
+      <groupId>org.junit.jupiter</groupId>
+      <scope>test</scope>
+      <version>5.9.1</version>
+    </dependency>
+    <dependency>
+      <artifactId>google-oauth-client</artifactId>
+      <groupId>com.google.oauth-client</groupId>
+      <version>1.28.0</version>
+    </dependency>
+    <dependency>
+      <artifactId>google-api-client</artifactId>
+      <groupId>com.google.api-client</groupId>
+      <version>1.23.0</version>
+    </dependency>
+    <dependency>
+      <artifactId>google-api-services-sheets</artifactId>
+      <groupId>com.google.apis</groupId>
+      <version>v4-rev493-1.23.0</version>
+    </dependency>
+    <dependency>
+      <artifactId>google-oauth-client-jetty</artifactId>
+      <groupId>com.google.oauth-client</groupId>
+      <version>1.34.1</version>
+    </dependency>
+    <dependency>
+      <artifactId>junit-jupiter-api</artifactId>
+      <groupId>org.junit.jupiter</groupId>
+      <scope>test</scope>
+      <version>5.9.1</version>
+    </dependency>
+
+    <dependency>
+      <artifactId>lombok</artifactId>
+      <groupId>org.projectlombok</groupId>
+      <scope>provided</scope>
+      <version>1.18.24</version>
+    </dependency>
+    <dependency>
+      <artifactId>jackson-databind</artifactId>
+      <groupId>com.fasterxml.jackson.core</groupId>
+      <version>2.13.4</version>
+    </dependency>
+
+  </dependencies>
+  <groupId>org.example</groupId>
+  <modelVersion>4.0.0</modelVersion>
+
+  <properties>
+    <maven.compiler.source>17</maven.compiler.source>
+    <maven.compiler.target>17</maven.compiler.target>
+  </properties>
+
+  <version>1.0-SNAPSHOT</version>
+</project>
