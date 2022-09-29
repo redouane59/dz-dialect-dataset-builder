@@ -39,4 +39,8 @@ public class PossessiveWord extends GenderedWord implements Comparable {
     return getTranslationValue(Lang.FR) + " -> " + getTranslationValue(Lang.DZ) + " " + getTranslationValueAr(Lang.DZ);
   }
 
+  public String getId() {
+    return getPossession() + "-" + getGender() + "-" + (isSingular() ? "S" : "P");
+  }
+
 }
