@@ -17,16 +17,16 @@ public class Word {
   @Getter
   private List<Translation> translations = new ArrayList<>();
 
-  public Optional<Translation> getTranslationByLang(Lang lang) {
+  public Optional<Translation> getTranslation(Lang lang) {
     return translations.stream().filter(t -> t.getLang() == lang).findAny();
   }
 
   public String getTranslationValue(Lang lang) {
-    return getTranslationByLang(lang).orElse(new Translation(lang, "")).getValue();
+    return getTranslation(lang).orElse(new Translation(lang, "")).getValue();
   }
 
   public String getTranslationValueAr(Lang lang) {
-    return getTranslationByLang(lang).orElse(new Translation(lang, "")).getArValue();
+    return getTranslation(lang).orElse(new Translation(lang, "")).getArValue();
   }
 
 

@@ -24,11 +24,11 @@ public class GenderedWord extends Word {
   }
 
   public Gender getGender(Lang lang) {
-    if (this.getTranslationByLang(lang).isEmpty()) {
+    if (this.getTranslation(lang).isEmpty()) {
       return gender;
     }
-    return this.getTranslationByLang(lang).get().getGender() != null
-           ? this.getTranslationByLang(lang).get().getGender()
+    return this.getTranslation(lang).get().getGender() != null
+           ? this.getTranslation(lang).get().getGender()
            : gender;
   }
 

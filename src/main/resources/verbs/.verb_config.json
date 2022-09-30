@@ -1,0 +1,613 @@
+[
+  {
+    "id": "accélérer",
+    "possible_questions": [
+      "why"
+    ],
+    "possible_complements": [],
+    "verb_type": "ACTION"
+  },
+  {
+    "id": "acheter",
+    "possible_complements": [
+      "PLACE",
+      "OBJECT"
+    ],
+    "possible_questions": [
+      "how many",
+      "what",
+      "when"
+    ],
+    "verb_type": "ACTION",
+    "indirect_complement": true,
+    "object_only": true
+  },
+  {
+    "id": "aider",
+    "verb_type": "ACTION",
+    "possible_complements": [
+      "PERSON"
+    ],
+    "possible_questions": [
+      "who",
+      "when"
+    ],
+    "direct_complement": true
+  },
+  {
+    "id": "aimer",
+    "possible_complements": [
+      "PLACE",
+      "OBJECT",
+      "PERSON",
+      "VERB"
+    ],
+    "possible_questions": [
+      "what"
+    ],
+    "verb_type": "ACTION",
+    "semi_auxiliar": true,
+    "direct_complement": true
+  },
+  {
+    "id": "aller",
+    "possible_complements": [
+      "PLACE",
+      "OBJECT",
+      "PERSON"
+    ],
+    "possible_questions": [
+      "where",
+      "when",
+      "with who"
+    ],
+    "semi_auxiliar": true,
+    "verb_type": "DEPLACEMENT"
+  },
+  {
+    "id": "appeler",
+    "possible_complements": [
+      "PERSON"
+    ],
+    "possible_questions": [
+      "who",
+      "when",
+      "why"
+    ],
+    "verb_type": "ACTION",
+    "direct_complement": true,
+    "dz_opposite_complement": true
+  },
+  {
+    "id": "apporter",
+    "possible_questions": [
+      "what"
+    ],
+    "possible_complements": [
+      "FOOD",
+      "OBJECT"
+    ],
+    "verb_type": "ACTION",
+    "semi_auxiliar": false,
+    "indirect_complement": true
+  },
+  {
+    "id": "arriver",
+    "possible_questions": [
+      "when"
+    ],
+    "possible_complements": [],
+    "verb_type": "ACTION"
+  },
+  {
+    "id": "attendre",
+    "possible_questions": [
+      "what",
+      "who"
+    ],
+    "possible_complements": [
+      "PERSON",
+      "ADVERB"
+    ],
+    "verb_type": "ACTION",
+    "direct_complement": true
+  },
+  {
+    "id": "avoir",
+    "possible_complements": [
+      "PLACE",
+      "OBJECT"
+    ],
+    "possible_questions": [
+      "how many"
+    ],
+    "verb_type": "POSSESSION"
+  },
+  {
+    "id": "boire",
+    "possible_questions": [
+      "what",
+      "why"
+    ],
+    "possible_complements": [
+      "ADVERB"
+    ],
+    "verb_type": "ACTION"
+  },
+  {
+    "id": "changer",
+    "possible_questions": [
+      "what",
+      "why",
+      "how",
+      "who"
+    ],
+    "possible_complements": [],
+    "verb_type": "ACTION",
+    "direct_complement": true,
+    "object_only": true
+  },
+  {
+    "id": "chanter",
+    "possible_questions": [
+      "what",
+      "why",
+      "with who"
+    ],
+    "possible_complements": [
+      "ADVERB"
+    ],
+    "verb_type": "ACTION",
+    "semi_auxiliar": false
+  },
+  {
+    "id": "chercher",
+    "possible_questions": [
+      "what",
+      "who",
+      "where",
+      "how"
+    ],
+    "possible_complements": [
+      "PERSON",
+      "PLACE",
+      "FOOD"
+    ],
+    "verb_type": "ACTION",
+    "dz_no_suffix": true
+  },
+  {
+    "id": "être",
+    "possible_complements": [
+      "PLACE",
+      "PERSON"
+    ],
+    "possible_questions": [
+      "who",
+      "where",
+      "with who"
+    ],
+    "verb_type": "STATE"
+  },
+  {
+    "id": "commencer",
+    "possible_questions": [
+      "when",
+      "where"
+    ],
+    "verb_type": "ACTION"
+  },
+  {
+    "id": "venir",
+    "possible_complements": [
+      "PLACE",
+      "ADVERB",
+      "VERB"
+    ],
+    "possible_questions": [
+      "when"
+    ],
+    "verb_type": "DEPLACEMENT"
+  },
+  {
+    "id": "comprendre",
+    "possible_complements": [
+      "PERSON"
+    ],
+    "possible_questions": [
+      "what"
+    ],
+    "verb_type": "ACTION"
+  },
+  {
+    "id": "connaître",
+    "possible_complements": [
+      "PERSON"
+    ],
+    "possible_questions": [
+      "who",
+      "how",
+      "why"
+    ],
+    "verb_type": "ACTION",
+    "direct_complement": true
+  },
+  {
+    "id": "crier",
+    "possible_questions": [
+      "why"
+    ],
+    "verb_type": "ACTION"
+  },
+  {
+    "id": "connaître",
+    "possible_complements": [
+      "PERSON"
+    ],
+    "possible_questions": [
+      "who",
+      "how"
+    ],
+    "verb_type": "ACTION",
+    "direct_complement": true
+  },
+  {
+    "id": "cuisiner",
+    "possible_questions": [
+      "what",
+      "when",
+      "why"
+    ],
+    "possible_complements": [
+      "FOOD",
+      "ADVERB"
+    ],
+    "verb_type": "ACTION",
+    "indirect_complement": true,
+    "object_only": true
+  },
+  {
+    "id": "dire",
+    "possible_questions": [
+      "what"
+    ],
+    "verb_type": "ACTION",
+    "indirect_complement": true
+  },
+  {
+    "id": "descendre",
+    "possible_questions": [
+      "why",
+      "how",
+      "with who",
+      "where"
+    ],
+    "possible_complements": [
+      "PLACE"
+    ],
+    "verb_type": "DEPLACEMENT"
+  },
+  {
+    "id": "demander",
+    "possible_questions": [
+      "what",
+      "why"
+    ],
+    "verb_type": "ACTION",
+    "indirect_complement": true
+  },
+  {
+    "id": "dormir",
+    "possible_questions": [
+      "why",
+      "where",
+      "when",
+      "with who"
+    ],
+    "possible_complements": [
+      "ADVERB"
+    ],
+    "verb_type": "ACTION"
+  },
+  {
+    "id": "danser",
+    "possible_questions": [
+      "why"
+    ],
+    "possible_complements": [
+      "ADVERB"
+    ],
+    "verb_type": "ACTION",
+    "semi_auxiliar": false
+  },
+  {
+    "id": "douter",
+    "possible_questions": [
+      "why"
+    ]
+  },
+  {
+    "id": "écrire",
+    "possible_questions": [
+      "what",
+      "why"
+    ],
+    "verb_type": "ACTION",
+    "indirect_complement": true
+  },
+  {
+    "id": "essayer",
+    "possible_questions": [
+      "why",
+      "what"
+    ],
+    "possible_complements": [],
+    "verb_type": "ACTION",
+    "direct_complement": true,
+    "object_only": true
+  },
+  {
+    "id": "envoyer",
+    "possible_complements": [
+      "OBJECT"
+    ],
+    "possible_questions": [
+      "what"
+    ],
+    "verb_type": "ACTION",
+    "indirect_complement": true,
+    "direct_complement": true
+  },
+  {
+    "id": "entrer",
+    "possible_questions": [
+      "why",
+      "when",
+      "with who"
+    ],
+    "possible_complements": [
+      "PLACE"
+    ],
+    "verb_type": "DEPLACEMENT"
+  },
+  {
+    "id": "marcher",
+    "possible_questions": [
+      "where",
+      "when"
+    ],
+    "verb_type": "ACTION"
+  },
+  {
+    "id": "essayer2",
+    "possible_questions": [
+      "why",
+      "what"
+    ],
+    "direct_complement": true,
+    "object_only": true
+  },
+  {
+    "id": "expliquer",
+    "possible_questions": [
+      "when",
+      "why"
+    ],
+    "possible_complements": [],
+    "verb_type": "ACTION",
+    "indirect_complement": true
+  },
+  {
+    "id": "faire",
+    "possible_questions": [
+      "what",
+      "how"
+    ],
+    "possible_complements": [
+      "FOOD"
+    ],
+    "verb_type": "ACTION",
+    "indirect_complement": true
+  },
+  {
+    "id": "fermer",
+    "possible_questions": [
+      "when",
+      "why"
+    ],
+    "possible_complements": [
+      "OBJECT"
+    ],
+    "verb_type": "ACTION",
+    "direct_complement": true,
+    "object_only": true
+  },
+  {
+    "id": "finir",
+    "possible_questions": [
+      "when"
+    ],
+    "verb_type": "ACTION",
+    "direct_complement": true,
+    "object_only": true
+  },
+  {
+    "id": "habiter",
+    "possible_questions": [
+      "where",
+      "with who"
+    ],
+    "possible_complements": [
+      "PLACE",
+      "ADVERB"
+    ],
+    "verb_type": "ACTION"
+  },
+  {
+    "id": "laisser",
+    "possible_questions": [
+      "what"
+    ],
+    "possible_complements": [
+      "OBJECT"
+    ],
+    "verb_type": "ACTION",
+    "indirect_complement": true,
+    "direct_complement": true
+  },
+  {
+    "id": "lire",
+    "possible_questions": [
+      "what",
+      "why"
+    ],
+    "verb_type": "ACTION"
+  },
+  {
+    "id": "lire",
+    "possible_questions": [
+      "what",
+      "when",
+      "where",
+      "with who",
+      "why"
+    ],
+    "possible_complements": [
+      "FOOD",
+      "ADVERB"
+    ],
+    "verb_type": "ACTION",
+    "direct_complement": true,
+    "object_only": true
+  },
+  {
+    "id": "marcher",
+    "possible_questions": [
+      "where",
+      "when"
+    ],
+    "verb_type": "ACTION"
+  },
+  {
+    "id": "monter",
+    "possible_questions": [
+      "where",
+      "why",
+      "when"
+    ],
+    "verb_type": "ACTION"
+  },
+  {
+    "id": "montrer",
+    "possible_questions": [
+      "what",
+      "who"
+    ],
+    "possible_complements": [
+      "OBJECT",
+      "PLACE",
+      "PERSON",
+      "FOOD"
+    ],
+    "verb_type": "ACTION",
+    "indirect_complement": true
+  },
+  {
+    "id": "ouvrir",
+    "possible_questions": [
+      "how",
+      "why"
+    ],
+    "possible_complements": [
+      "OBJECT"
+    ],
+    "verb_type": "ACTION",
+    "direct_complement": true,
+    "object_only": true
+  },
+  {
+    "id": "ouvrir2",
+    "possible_questions": [
+      "how",
+      "why"
+    ],
+    "possible_complements": [
+      "OBJECT"
+    ],
+    "verb_type": "ACTION",
+    "direct_complement": true,
+    "object_only": true
+  },
+  {
+    "id": "parler",
+    "possible_questions": [
+      "with who"
+    ],
+    "verb_type": "ACTION",
+    "indirect_complement": true
+  },
+  {
+    "id": "partager",
+    "verb_type": "ACTION",
+    "indirect_complement": true,
+    "object_only": true
+  },
+  {
+    "id": "payer",
+    "possible_questions": [
+      "what",
+      "why",
+      "how"
+    ],
+    "verb_type": "ACTION",
+    "direct_complement": true,
+    "indirect_complement": true
+  },
+  {
+    "id": "penser",
+    "possible_questions": [
+      "what"
+    ],
+    "verb_type": "ACTION"
+  },
+  {
+    "id": "plaire",
+    "possible_questions": [
+      "who",
+      "why"
+    ],
+    "verb_type": "ACTION",
+    "indirect_complement": true
+  },
+  {
+    "id": "poser",
+    "possible_questions": [
+      "what",
+      "why"
+    ],
+    "verb_type": "ACTION",
+    "object_only": true,
+    "direct_complement": true
+  },
+  {
+    "id": "manger",
+    "possible_questions": [
+      "what"
+    ],
+    "possible_complements": [
+      "FOOD"
+    ],
+    "object_only": true,
+    "verb_type": "ACTION",
+    "direct_complement": true
+  },
+  {
+    "id": "dechirer",
+    "possible_questions": [
+      "what"
+    ],
+    "object_only": true,
+    "verb_type": "ACTION",
+    "direct_complement": true
+  }
+]

@@ -7,7 +7,6 @@ import io.github.redouane59.dzdialect.datasetbuilder.enumerations.Lang;
 import io.github.redouane59.dzdialect.datasetbuilder.word.concrets.PossessiveWord;
 import io.github.redouane59.dzdialect.datasetbuilder.word.concrets.Translation;
 import io.github.redouane59.dzdialect.datasetbuilder.word.concrets.Word;
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -35,7 +34,7 @@ public class Sentence extends Word {
   @Builder
   public static class SentenceContent {
 
-    private List<PossessiveWord> pronouns = new ArrayList<>();
+    private List<PossessiveWord> pronouns;
     private boolean              negation;
 
   }

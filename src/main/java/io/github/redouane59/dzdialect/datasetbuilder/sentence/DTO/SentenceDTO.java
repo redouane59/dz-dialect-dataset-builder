@@ -24,7 +24,6 @@ public class SentenceDTO extends WordDTO {
   @JsonInclude(value = Include.CUSTOM, valueFilter = WordPropositionsDTO.class)
   private WordPropositionsDTO wordPropositions;
   @JsonProperty("additionnal_information")
-  //@JsonInclude(value = JsonInclude.Include.CUSTOM, valueFilter = SentenceContentDTO.class)
   private SentenceContentDTO  sentenceContent;
 
   public SentenceDTO(Sentence sentence) {

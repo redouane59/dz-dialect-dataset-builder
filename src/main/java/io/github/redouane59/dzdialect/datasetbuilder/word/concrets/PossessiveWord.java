@@ -40,7 +40,7 @@ public class PossessiveWord extends GenderedWord implements Comparable {
   }
 
   public String getId() {
-    return getPossession() + "-" + getGender() + "-" + (isSingular() ? "S" : "P");
+    return getPossession() + "-" + getGender() + (isSingular() ? "S" : "P");
   }
 
 }
