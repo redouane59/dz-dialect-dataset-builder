@@ -18,13 +18,14 @@ import org.junit.jupiter.api.Test;
 public class VerbsTest {
 
   @BeforeAll
-  public static void inti() throws IOException {
+  public static void init() throws IOException {
     DB.init();
   }
 
   @Test
-  public void testDeserializePronouns() {
+  public void testDeserializeVerbs() {
     assertTrue(DB.VERBS.size() > 30);
+    System.out.println(DB.VERBS.size() + " verbs found");
     assertNotNull(DB.AUX_ETRE);
     Conjugation etre1SX = DB.AUX_ETRE.getConjugationByGenderSingularPossessionAndTense(Gender.X, true, Possession.I, Tense.PRESENT).get();
     assertEquals("suis", etre1SX.getTranslationValue(Lang.FR));
@@ -35,7 +36,22 @@ public class VerbsTest {
   }
 
   @Test
-  public void printPronouns() {
+  public void testConfigurations() {
+    int missingConfig = 0;
+    for (Verb verb : DB.VERBS) {
+      if (verb.getPossibleQuestionIds().isEmpty() && verb.getVerbType() == null) {
+        missingConfig++;
+        System.out.println("no config found for verb : " + verb.getId());
+      }
+    }
+
+    assertEquals(0, missingConfig);
+  }
+
+  @Test
+  public void printVerbs() {
     DB.VERBS.stream().map(Verb::getValues).forEach(System.out::println);
   }
+
+
 }

@@ -1,0 +1,53 @@
+{
+  "id": "délicieux",
+  "values": [
+    {
+      "translations": [
+        {
+          "lang": "DZ",
+          "value": "bnin",
+          "ar_value": "بْنين"
+        },
+        {
+          "lang": "FR",
+          "value": "délicieux"
+        }
+      ],
+      "gender": "M",
+      "singular": true,
+      "tense": null
+    },
+    {
+      "translations": [
+        {
+          "lang": "DZ",
+          "value": "bnina",
+          "ar_value": "بنينا"
+        },
+        {
+          "lang": "FR",
+          "value": "délicieuse"
+        }
+      ],
+      "gender": "F",
+      "singular": true,
+      "tense": null
+    },
+    {
+      "translations": [
+        {
+          "lang": "DZ",
+          "value": "bnaan",
+          "ar_value": "بنان"
+        },
+        {
+          "lang": "FR",
+          "value": "délicieux(ses)"
+        }
+      ],
+      "gender": "X",
+      "singular": false,
+      "tense": null
+    }
+  ]
+}

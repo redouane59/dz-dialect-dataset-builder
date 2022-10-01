@@ -1,0 +1,53 @@
+{
+  "id": "fatigué",
+  "values": [
+    {
+      "translations": [
+        {
+          "lang": "DZ",
+          "value": "3ayan",
+          "ar_value": "عيان"
+        },
+        {
+          "lang": "FR",
+          "value": "fatigué"
+        }
+      ],
+      "gender": "M",
+      "singular": true,
+      "tense": null
+    },
+    {
+      "translations": [
+        {
+          "lang": "DZ",
+          "value": "3ayana",
+          "ar_value": "عيانا"
+        },
+        {
+          "lang": "FR",
+          "value": "fatiguée"
+        }
+      ],
+      "gender": "F",
+      "singular": true,
+      "tense": null
+    },
+    {
+      "translations": [
+        {
+          "lang": "DZ",
+          "value": "3ayanine",
+          "ar_value": "عيانين"
+        },
+        {
+          "lang": "FR",
+          "value": "fatigué(e)s"
+        }
+      ],
+      "gender": "X",
+      "singular": false,
+      "tense": null
+    }
+  ]
+}

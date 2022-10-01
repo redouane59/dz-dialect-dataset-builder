@@ -74,4 +74,9 @@ public class Translation {
     newValue = newValue.trim();
     return newValue;
   }
+
+  @Override
+  public String toString() {
+    return this.getValue();
+  }
 }

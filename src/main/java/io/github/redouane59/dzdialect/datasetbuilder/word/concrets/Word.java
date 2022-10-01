@@ -29,5 +29,8 @@ public class Word {
     return getTranslation(lang).orElse(new Translation(lang, "")).getArValue();
   }
 
-
+  @Override
+  public String toString() {
+    return getTranslationValue(Lang.FR) + " -> " + getTranslationValue(Lang.DZ) + " " + getTranslationValueAr(Lang.DZ);
+  }
 }

@@ -1,0 +1,45 @@
+{
+  "id" : "endormi",
+  "wordType" : "ADJECTIVE",
+  "values" : [ {
+    "translations" : [ {
+      "lang" : "FR",
+      "value" : "endormi"
+    }, {
+      "lang" : "DZ",
+      "value" : "ra9ad",
+      "ar_value" : "راقد"
+    } ],
+    "gender" : "M",
+    "singular" : true,
+    "tense" : null
+  }, {
+    "translations" : [ {
+      "lang" : "FR",
+      "value" : "endormie"
+    }, {
+      "lang" : "DZ",
+      "value" : "ra9da",
+      "ar_value" : "راقدة"
+    } ],
+    "gender" : "F",
+    "singular" : true,
+    "tense" : null
+  }, {
+    "translations" : [ {
+      "lang" : "FR",
+      "value" : "endormi(e)s"
+    }, {
+      "lang" : "DZ",
+      "value" : "ra9din",
+      "ar_value" : "راقدين"
+    } ],
+    "gender" : "X",
+    "singular" : false,
+    "tense" : null
+  } ],
+  "temporal" : false,
+  "definitive" : false,
+  "possible_nouns" : [ ],
+  "fr_aux_avoir" : false
+}

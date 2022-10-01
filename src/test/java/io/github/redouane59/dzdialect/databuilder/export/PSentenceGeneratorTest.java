@@ -39,6 +39,7 @@ public class PSentenceGeneratorTest {
       assertTrue(result.contains("fr"));
       assertTrue(result.contains("word_propositions"));
       assertTrue(result.contains("additionnal_information"));
+      assertTrue(result.contains("pronouns"));
     }
   }
 

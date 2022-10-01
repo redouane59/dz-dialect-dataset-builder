@@ -3,6 +3,7 @@ package io.github.redouane59.dzdialect.datasetbuilder.sentence;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import io.github.redouane59.dzdialect.datasetbuilder.adjective.Adjective;
 import io.github.redouane59.dzdialect.datasetbuilder.enumerations.Lang;
 import io.github.redouane59.dzdialect.datasetbuilder.word.concrets.PossessiveWord;
 import io.github.redouane59.dzdialect.datasetbuilder.word.concrets.Translation;
@@ -35,6 +36,8 @@ public class Sentence extends Word {
   public static class SentenceContent {
 
     private List<PossessiveWord> pronouns;
+    private List<Adjective>      adjectives;
+    private String               subtense;
     private boolean              negation;
 
   }

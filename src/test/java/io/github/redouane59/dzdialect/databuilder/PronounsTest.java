@@ -14,7 +14,7 @@ import org.junit.jupiter.api.Test;
 public class PronounsTest {
 
   @BeforeAll
-  public static void inti() throws IOException {
+  public static void init() throws IOException {
     DB.init();
   }
 

@@ -1,0 +1,45 @@
+{
+  "id" : "présent",
+  "wordType" : "ADJECTIVE",
+  "values" : [ {
+    "translations" : [ {
+      "lang" : "FR",
+      "value" : "présent"
+    }, {
+      "lang" : "DZ",
+      "value" : "7adar",
+      "ar_value" : "حاضر"
+    } ],
+    "gender" : "M",
+    "singular" : true,
+    "tense" : null
+  }, {
+    "translations" : [ {
+      "lang" : "FR",
+      "value" : "présente"
+    }, {
+      "lang" : "DZ",
+      "value" : "7adra",
+      "ar_value" : "حاضرة"
+    } ],
+    "gender" : "F",
+    "singular" : true,
+    "tense" : null
+  }, {
+    "translations" : [ {
+      "lang" : "FR",
+      "value" : "présents"
+    }, {
+      "lang" : "DZ",
+      "value" : "7adrine",
+      "ar_value" : "حاضرين"
+    } ],
+    "gender" : "X",
+    "singular" : false,
+    "tense" : null
+  } ],
+  "temporal" : false,
+  "definitive" : false,
+  "possible_nouns" : [ ],
+  "fr_aux_avoir" : false
+}

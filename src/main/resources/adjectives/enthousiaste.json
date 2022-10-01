@@ -1,0 +1,45 @@
+{
+  "id" : "enthousiaste",
+  "wordType" : "ADJECTIVE",
+  "values" : [ {
+    "translations" : [ {
+      "lang" : "FR",
+      "value" : "enthousiaste"
+    }, {
+      "lang" : "DZ",
+      "value" : "hayel",
+      "ar_value" : "هايل"
+    } ],
+    "gender" : "M",
+    "singular" : true,
+    "tense" : null
+  }, {
+    "translations" : [ {
+      "lang" : "FR",
+      "value" : "enthousiaste"
+    }, {
+      "lang" : "DZ",
+      "value" : "hayla",
+      "ar_value" : "هايلة"
+    } ],
+    "gender" : "F",
+    "singular" : true,
+    "tense" : null
+  }, {
+    "translations" : [ {
+      "lang" : "FR",
+      "value" : "enthousiastes"
+    }, {
+      "lang" : "DZ",
+      "value" : "haylin",
+      "ar_value" : "هايلين"
+    } ],
+    "gender" : "X",
+    "singular" : false,
+    "tense" : null
+  } ],
+  "temporal" : false,
+  "definitive" : false,
+  "possible_nouns" : [ ],
+  "fr_aux_avoir" : false
+}

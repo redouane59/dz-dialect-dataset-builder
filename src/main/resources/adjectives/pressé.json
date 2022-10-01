@@ -1,0 +1,45 @@
+{
+  "id" : "pressé",
+  "wordType" : "ADJECTIVE",
+  "values" : [ {
+    "translations" : [ {
+      "lang" : "FR",
+      "value" : "Pressé"
+    }, {
+      "lang" : "DZ",
+      "value" : "mezroub",
+      "ar_value" : "مزروب"
+    } ],
+    "gender" : "M",
+    "singular" : true,
+    "tense" : null
+  }, {
+    "translations" : [ {
+      "lang" : "FR",
+      "value" : "Pressée"
+    }, {
+      "lang" : "DZ",
+      "value" : "mezrouba",
+      "ar_value" : "مزروبة"
+    } ],
+    "gender" : "F",
+    "singular" : true,
+    "tense" : null
+  }, {
+    "translations" : [ {
+      "lang" : "FR",
+      "value" : "Pressés"
+    }, {
+      "lang" : "DZ",
+      "value" : "mezroubin",
+      "ar_value" : "مزروبين"
+    } ],
+    "gender" : "X",
+    "singular" : false,
+    "tense" : null
+  } ],
+  "temporal" : false,
+  "definitive" : false,
+  "possible_nouns" : [ ],
+  "fr_aux_avoir" : false
+}

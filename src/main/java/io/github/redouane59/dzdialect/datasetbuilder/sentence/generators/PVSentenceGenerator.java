@@ -6,6 +6,7 @@ import io.github.redouane59.dzdialect.datasetbuilder.enumerations.Tense;
 import io.github.redouane59.dzdialect.datasetbuilder.sentence.Sentence;
 import io.github.redouane59.dzdialect.datasetbuilder.sentence.Sentence.SentenceContent;
 import io.github.redouane59.dzdialect.datasetbuilder.verb.Conjugation;
+import io.github.redouane59.dzdialect.datasetbuilder.verb.Verb;
 import io.github.redouane59.dzdialect.datasetbuilder.word.concrets.PossessiveWord;
 import io.github.redouane59.dzdialect.datasetbuilder.word.concrets.Translation;
 import java.util.ArrayList;
@@ -19,27 +20,28 @@ public class PVSentenceGenerator extends AbstractSentenceGenerator {
   @Override
   public List<Sentence> generateAllSentences() {
     List<Sentence> result = new ArrayList<>();
-    for (Tense tense : Tense.values()) {
-      for (PossessiveWord pronoun : DB.PERSONAL_PRONOUNS.getValues()) {
-        List<Translation> translations = new ArrayList<>();
-        Optional<Conjugation> etre = DB.AUX_ETRE.getConjugationByGenderSingularPossessionAndTense(pronoun.getGender(),
-                                                                                                  pronoun.isSingular(),
-                                                                                                  pronoun.getPossession(),
-                                                                                                  tense);
-        if (etre.isPresent()) {
-          String frSentence = pronoun.getTranslationValue(Lang.FR)
-                              + " "
-                              + etre.get().getTranslationValue(Lang.FR);
-          String dzSentence   = etre.get().getTranslationValue(Lang.DZ);
-          String dzArSentence = etre.get().getTranslationValueAr(Lang.DZ);
-          translations.add(new Translation(Lang.FR, frSentence));
-          translations.add(new Translation(Lang.DZ, dzSentence, dzArSentence));
-          Sentence sentence = new Sentence(translations);
-          sentence.setContent(SentenceContent.builder().pronouns(List.of(pronoun)).build());
-          //     sentence.setRandomWords(generateRandomAlternativeWords(sentence.getContent()));
-          result.add(sentence);
-        } else {
-          System.out.println("verb not found with tense : " + tense.getId());
+    for (Verb verb : DB.VERBS) {
+      for (Tense tense : Tense.values()) {
+        for (PossessiveWord pronoun : DB.PERSONAL_PRONOUNS.getValues()) {
+
+          List<Translation> translations = new ArrayList<>();
+          Optional<Conjugation> etre = verb.getConjugationByGenderSingularPossessionAndTense(pronoun.getGender(),
+                                                                                             pronoun.isSingular(),
+                                                                                             pronoun.getPossession(),
+                                                                                             tense);
+          if (etre.isPresent()) {
+            String frSentence = pronoun.getTranslationValue(Lang.FR)
+                                + " "
+                                + etre.get().getTranslationValue(Lang.FR);
+            String dzSentence   = etre.get().getTranslationValue(Lang.DZ);
+            String dzArSentence = etre.get().getTranslationValueAr(Lang.DZ);
+            translations.add(new Translation(Lang.FR, frSentence));
+            translations.add(new Translation(Lang.DZ, dzSentence, dzArSentence));
+            Sentence sentence = new Sentence(translations);
+            sentence.setContent(SentenceContent.builder().pronouns(List.of(pronoun)).subtense(tense.getId()).build());
+            //     sentence.setRandomWords(generateRandomAlternativeWords(sentence.getContent()));
+            result.add(sentence);
+          }
         }
       }
     }

@@ -1,0 +1,53 @@
+{
+  "id": "prêt",
+  "values": [
+    {
+      "translations": [
+        {
+          "lang": "DZ",
+          "value": "wadjed",
+          "ar_value": "واجد"
+        },
+        {
+          "lang": "FR",
+          "value": "prêt"
+        }
+      ],
+      "gender": "M",
+      "singular": true,
+      "tense": null
+    },
+    {
+      "translations": [
+        {
+          "lang": "DZ",
+          "value": "wajda",
+          "ar_value": "واجدا"
+        },
+        {
+          "lang": "FR",
+          "value": "prête"
+        }
+      ],
+      "gender": "F",
+      "singular": true,
+      "tense": null
+    },
+    {
+      "translations": [
+        {
+          "lang": "DZ",
+          "value": "wajdin",
+          "ar_value": "واجدين"
+        },
+        {
+          "lang": "FR",
+          "value": "prêt(e)s"
+        }
+      ],
+      "gender": "X",
+      "singular": false,
+      "tense": null
+    }
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "id" : "peur",
+  "wordType" : "ADJECTIVE",
+  "values" : [ {
+    "translations" : [ {
+      "lang" : "FR",
+      "value" : "peur"
+    }, {
+      "lang" : "DZ",
+      "value" : "khayef",
+      "ar_value" : "خايف"
+    } ],
+    "gender" : "M",
+    "singular" : true,
+    "tense" : null
+  }, {
+    "translations" : [ {
+      "lang" : "FR",
+      "value" : "peur"
+    }, {
+      "lang" : "DZ",
+      "value" : "khayfa",
+      "ar_value" : "خايفة"
+    } ],
+    "gender" : "F",
+    "singular" : true,
+    "tense" : null
+  }, {
+    "translations" : [ {
+      "lang" : "FR",
+      "value" : "peur"
+    }, {
+      "lang" : "DZ",
+      "value" : "khayfin",
+      "ar_value" : "خايفين"
+    } ],
+    "gender" : "X",
+    "singular" : false,
+    "tense" : null
+  } ],
+  "temporal" : false,
+  "definitive" : false,
+  "possible_nouns" : [ ],
+  "fr_aux_avoir" : false
+}

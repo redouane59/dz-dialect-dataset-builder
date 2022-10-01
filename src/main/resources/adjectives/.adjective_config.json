@@ -1,0 +1,667 @@
+[
+  {
+    "id": "beau",
+    "possible_nouns": [
+      "PLACE",
+      "PERSON",
+      "OBJECT",
+      "FOOD"
+    ],
+    "temporal": true,
+    "definitive": true
+  },
+  {
+    "id": "bien",
+    "possible_nouns": [
+      "PERSON",
+      "PLACE",
+      "OBJECT"
+    ],
+    "temporal": true,
+    "definitive": true
+  },
+  {
+    "id": "chaud",
+    "possible_nouns": [
+      "OBJECT"
+    ],
+    "temporal": true
+  },
+  {
+    "id": "cher",
+    "possible_nouns": [
+      "PLACE",
+      "OBJECT",
+      "FOOD"
+    ],
+    "temporal": true
+  },
+  {
+    "id": "difficile",
+    "possible_nouns": [
+      "PERSON",
+      "TASK"
+    ],
+    "temporal": true
+  },
+  {
+    "id": "difficile2",
+    "possible_nouns": [
+      "PERSON",
+      "TASK"
+    ],
+    "temporal": true
+  },
+  {
+    "id": "délicieux",
+    "possible_nouns": [
+      "FOOD"
+    ],
+    "temporal": true
+  },
+  {
+    "id": "facile",
+    "possible_nouns": [
+      "PERSON",
+      "TASK"
+    ],
+    "temporal": true,
+    "definitive": true
+  },
+  {
+    "id": "fatigué",
+    "possible_nouns": [
+      "PERSON"
+    ],
+    "temporal": true
+  },
+  {
+    "id": "fermé",
+    "possible_nouns": [
+      "PLACE",
+      "OBJECT"
+    ],
+    "temporal": true
+  },
+  {
+    "id": "froid",
+    "possible_nouns": [
+      "PERSON",
+      "FOOD"
+    ],
+    "temporal": true
+  },
+  {
+    "id": "gentil",
+    "possible_nouns": [
+      "PERSON"
+    ],
+    "definitive": true
+  },
+  {
+    "id": "grand",
+    "possible_nouns": [
+      "PLACE",
+      "PERSON",
+      "OBJECT",
+      "FOOD"
+    ],
+    "definitive": true
+  },
+  {
+    "id": "gros",
+    "possible_nouns": [
+      "PERSON"
+    ],
+    "definitive": true
+  },
+  {
+    "id": "impatient",
+    "possible_nouns": [
+      "PERSON"
+    ],
+    "temporal": true
+  },
+  {
+    "id": "lent",
+    "possible_nouns": [
+      "PERSON",
+      "OBJECT"
+    ],
+    "temporal": true
+  },
+  {
+    "id": "loin",
+    "possible_nouns": [
+      "PLACE",
+      "PERSON",
+      "OBJECT"
+    ],
+    "temporal": true
+  },
+  {
+    "id": "long",
+    "possible_nouns": [
+      "PLACE",
+      "PERSON",
+      "OBJECT",
+      "FOOD"
+    ],
+    "temporal": true
+  },
+  {
+    "id": "léger",
+    "possible_nouns": [
+      "PERSON",
+      "OBJECT",
+      "FOOD"
+    ],
+    "definitive": true
+  },
+  {
+    "id": "malade",
+    "possible_nouns": [
+      "PERSON"
+    ],
+    "temporal": true
+  },
+  {
+    "id": "neuf",
+    "possible_nouns": [
+      "PLACE",
+      "OBJECT"
+    ],
+    "temporal": true
+  },
+  {
+    "id": "ouvert",
+    "possible_nouns": [
+      "PLACE",
+      "OBJECT"
+    ],
+    "temporal": true
+  },
+  {
+    "id": "petit",
+    "possible_nouns": [
+      "PLACE",
+      "PERSON",
+      "OBJECT",
+      "FOOD"
+    ],
+    "definitive": true
+  },
+  {
+    "id": "proche",
+    "possible_nouns": [
+      "PLACE",
+      "PERSON",
+      "OBJECT"
+    ],
+    "temporal": true
+  },
+  {
+    "id": "prêt",
+    "possible_nouns": [
+      "PERSON"
+    ],
+    "temporal": true
+  },
+  {
+    "id": "vide",
+    "possible_nouns": [
+      "PLACE",
+      "OBJECT"
+    ],
+    "temporal": true
+  },
+  {
+    "id": "assis",
+    "possible_nouns": [
+      "PERSON"
+    ],
+    "temporal": true
+  },
+  {
+    "id": "bon",
+    "possible_nouns": [
+      "PERSON",
+      "FOOD"
+    ],
+    "definitive": true
+  },
+  {
+    "id": "bon",
+    "possible_nouns": [
+      "PERSON",
+      "FOOD"
+    ],
+    "definitive": true
+  },
+  {
+    "id": "courageux",
+    "possible_nouns": [
+      "PERSON"
+    ],
+    "definitive": true
+  },
+  {
+    "id": "debout",
+    "possible_nouns": [
+      "PERSON"
+    ],
+    "temporal": true
+  },
+  {
+    "id": "fou",
+    "possible_nouns": [
+      "PERSON"
+    ],
+    "definitive": true
+  },
+  {
+    "id": "gratuit",
+    "possible_nouns": [
+      "OBJECT"
+    ],
+    "temporal": true
+  },
+  {
+    "id": "heureux",
+    "possible_nouns": [
+      "PERSON"
+    ],
+    "definitive": true
+  },
+  {
+    "id": "inquiet",
+    "possible_nouns": [
+      "PERSON"
+    ],
+    "temporal": true
+  },
+  {
+    "id": "instruit",
+    "possible_nouns": [
+      "PERSON"
+    ],
+    "definitive": true
+  },
+  {
+    "id": "méchant",
+    "possible_nouns": [
+      "PERSON"
+    ],
+    "definitive": true
+  },
+  {
+    "id": "propre",
+    "possible_nouns": [
+      "OBJECT",
+      "FOOD"
+    ],
+    "temporal": true
+  },
+  {
+    "id": "timide",
+    "possible_nouns": [
+      "PERSON"
+    ],
+    "temporal": true
+  },
+  {
+    "id": "riche",
+    "possible_nouns": [
+      "PERSON"
+    ],
+    "temporal": true
+  },
+  {
+    "id": "forte",
+    "possible_nouns": [
+      "PERSON"
+    ],
+    "definitive": true
+  },
+  {
+    "id": "calme",
+    "possible_nouns": [
+      "PERSON"
+    ],
+    "definitive": true
+  },
+  {
+    "id": "juif",
+    "possible_nouns": [
+      "PERSON"
+    ],
+    "definitive": true
+  },
+  {
+    "id": "allongé",
+    "possible_nouns": [
+      "PERSON"
+    ],
+    "temporal": true
+  },
+  {
+    "id": "énervé",
+    "possible_nouns": [
+      "PERSON"
+    ],
+    "temporal": true
+  },
+  {
+    "id": "musulman",
+    "possible_nouns": [
+      "PERSON"
+    ],
+    "definitive": true
+  },
+  {
+    "id": "intelligent",
+    "possible_nouns": [
+      "PERSON"
+    ],
+    "definitive": true
+  },
+  {
+    "id": "riche",
+    "possible_nouns": [
+      "PERSON"
+    ],
+    "temporal": true
+  },
+  {
+    "id": "marocain",
+    "possible_nouns": [
+      "PERSON"
+    ],
+    "definitive": true
+  },
+  {
+    "id": "chrétien",
+    "possible_nouns": [
+      "PERSON"
+    ],
+    "definitive": true
+  },
+  {
+    "id": "moche",
+    "possible_nouns": [
+      "PERSON"
+    ],
+    "temporal": true
+  },
+  {
+    "id": "pauvre",
+    "possible_nouns": [
+      "PERSON"
+    ],
+    "temporal": true
+  },
+  {
+    "id": "français",
+    "possible_nouns": [
+      "PERSON"
+    ],
+    "definitive": true
+  },
+  {
+    "id": "egyptien",
+    "possible_nouns": [
+      "PERSON"
+    ],
+    "definitive": true
+  },
+  {
+    "id": "triste",
+    "possible_nouns": [
+      "PERSON"
+    ],
+    "temporal": true
+  },
+  {
+    "id": "noir",
+    "possible_nouns": [
+      "PERSON"
+    ],
+    "definitive": true
+  },
+  {
+    "id": "seul",
+    "possible_nouns": [
+      "PERSON"
+    ],
+    "temporal": true
+  },
+  {
+    "id": "arabe",
+    "possible_nouns": [
+      "PERSON"
+    ],
+    "definitive": true
+  },
+  {
+    "id": "européen",
+    "possible_nouns": [
+      "PERSON"
+    ],
+    "definitive": true
+  },
+  {
+    "id": "propre",
+    "possible_nouns": [
+      "PERSON"
+    ],
+    "temporal": true
+  },
+  {
+    "id": "fort",
+    "possible_nouns": [
+      "PERSON"
+    ],
+    "definitive": true
+  },
+  {
+    "id": "algérien",
+    "possible_nouns": [
+      "PERSON"
+    ],
+    "definitive": true
+  },
+  {
+    "id": "tunisien",
+    "possible_nouns": [
+      "PERSON"
+    ],
+    "definitive": true
+  },
+  {
+    "id": "salé",
+    "possible_nouns": [
+      "FOOD"
+    ],
+    "temporal": true
+  },
+  {
+    "id": "sale",
+    "possible_nouns": [
+      "OBJECT"
+    ],
+    "temporal": true
+  },
+  {
+    "id": "épicé",
+    "possible_nouns": [
+      "FOOD"
+    ],
+    "temporal": true
+  },
+  {
+    "id": "sucré",
+    "possible_nouns": [
+      "FOOD"
+    ],
+    "temporal": true
+  },
+  {
+    "id": "mauvais",
+    "possible_nouns": [
+      "PERSON"
+    ],
+    "temporal": true
+  },
+  {
+    "id": "athée",
+    "possible_nouns": [
+      "PERSON"
+    ],
+    "definitive": true
+  },
+  {
+    "id": "faim",
+    "possible_nouns": [
+      "PERSON"
+    ],
+    "temporal": true,
+    "fr_aux_avoir": true
+  },
+  {
+    "id": "soif",
+    "possible_nouns": [
+      "PERSON"
+    ],
+    "temporal": true,
+    "fr_aux_avoir": true
+  },
+  {
+    "id": "défaillant",
+    "possible_nouns": [
+      "OBJECT"
+    ],
+    "temporal": true
+  },
+  {
+    "id": "éveillé",
+    "possible_nouns": [
+      "PERSON"
+    ],
+    "temporal": true
+  },
+  {
+    "id": "occupé",
+    "possible_nouns": [
+      "PERSON"
+    ],
+    "temporal": true
+  },
+  {
+    "id": "endormi",
+    "possible_nouns": [
+      "PERSON"
+    ],
+    "temporal": true
+  },
+  {
+    "id": "absent",
+    "possible_nouns": [
+      "PERSON"
+    ],
+    "temporal": true
+  },
+  {
+    "id": "peur",
+    "possible_nouns": [
+      "PERSON"
+    ],
+    "temporal": true,
+    "fr_aux_avoir": true
+  },
+  {
+    "id": "affamé",
+    "possible_nouns": [
+      "PERSON"
+    ],
+    "temporal": true
+  },
+  {
+    "id": "assoifé",
+    "possible_nouns": [
+      "PERSON"
+    ],
+    "temporal": true
+  },
+  {
+    "id": "brûlé",
+    "possible_nouns": [
+      "PERSON",
+      "FOOD",
+      "OBJECT"
+    ],
+    "temporal": true
+  },
+  {
+    "id": "perdu",
+    "possible_nouns": [
+      "PERSON"
+    ],
+    "temporal": true
+  },
+  {
+    "id": "cassé",
+    "possible_nouns": [
+      "OBJECT"
+    ],
+    "temporal": true
+  },
+  {
+    "id": "enthousiaste",
+    "possible_nouns": [
+      "PERSON"
+    ],
+    "temporal": true
+  },
+  {
+    "id": "pressé",
+    "possible_nouns": [
+      "PERSON"
+    ],
+    "temporal": true
+  },
+  {
+    "id": "curieux",
+    "possible_nouns": [
+      "PERSON"
+    ],
+    "definitive": true
+  },
+  {
+    "id": "plein",
+    "possible_nouns": [
+      "PLACE"
+    ],
+    "temporal": true
+  },
+  {
+    "id": "rassasié",
+    "possible_nouns": [
+      "PERSON"
+    ],
+    "temporal": true
+  },
+  {
+    "id": "présent",
+    "possible_nouns": [
+      "PERSON"
+    ],
+    "temporal": true
+  },
+  {
+    "id": "fâché",
+    "possible_nouns": [
+      "PERSON"
+    ],
+    "temporal": true
+  }
+]

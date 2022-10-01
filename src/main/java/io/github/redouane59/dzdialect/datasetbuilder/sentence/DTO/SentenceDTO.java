@@ -100,6 +100,7 @@ public class SentenceDTO extends WordDTO {
       if (content.getPronouns().size() > 0) {
         this.abstractPronouns = content.getPronouns().stream().map(PossessiveWord::getId).collect(Collectors.toList());
       }
+      this.subtense = content.getSubtense();
       this.negation = content != null && content.isNegation();
     }
   }

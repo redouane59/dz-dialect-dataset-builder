@@ -1,0 +1,53 @@
+{
+  "id": "léger",
+  "values": [
+    {
+      "translations": [
+        {
+          "lang": "DZ",
+          "value": "khfif",
+          "ar_value": "خفيف"
+        },
+        {
+          "lang": "FR",
+          "value": "léger"
+        }
+      ],
+      "gender": "M",
+      "singular": true,
+      "tense": null
+    },
+    {
+      "translations": [
+        {
+          "lang": "DZ",
+          "value": "khfifa",
+          "ar_value": "خفيفا"
+        },
+        {
+          "lang": "FR",
+          "value": "légère"
+        }
+      ],
+      "gender": "F",
+      "singular": true,
+      "tense": null
+    },
+    {
+      "translations": [
+        {
+          "lang": "DZ",
+          "value": "khfef",
+          "ar_value": "خفاف"
+        },
+        {
+          "lang": "FR",
+          "value": "léger(e)s"
+        }
+      ],
+      "gender": "X",
+      "singular": false,
+      "tense": null
+    }
+  ]
+}
