@@ -6,6 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import io.github.redouane59.dzdialect.datasetbuilder.enumerations.Lang;
 import io.github.redouane59.dzdialect.datasetbuilder.sentence.Sentence;
 import io.github.redouane59.dzdialect.datasetbuilder.sentence.Sentence.SentenceContent;
+import io.github.redouane59.dzdialect.datasetbuilder.word.abstracts.AbstractWord;
 import io.github.redouane59.dzdialect.datasetbuilder.word.concrets.PossessiveWord;
 import java.util.ArrayList;
 import java.util.List;
@@ -97,8 +98,14 @@ public class SentenceDTO extends WordDTO {
     private boolean      negation;
 
     public SentenceContentDTO(final SentenceContent content) {
-      if (content.getPronouns().size() > 0) {
+      if (content.getPronouns() != null) {
         this.abstractPronouns = content.getPronouns().stream().map(PossessiveWord::getId).collect(Collectors.toList());
+      }
+      if (content.getAdjectives() != null) {
+        this.abstractAdjectives = content.getAdjectives().stream().map(AbstractWord::getId).collect(Collectors.toList());
+      }
+      if (content.getVerbs() != null) {
+        this.abstractVerbs = content.getVerbs().stream().map(AbstractWord::getId).collect(Collectors.toList());
       }
       this.subtense = content.getSubtense();
       this.negation = content != null && content.isNegation();

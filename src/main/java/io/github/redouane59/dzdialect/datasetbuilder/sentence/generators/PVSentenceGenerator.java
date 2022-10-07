@@ -30,15 +30,17 @@ public class PVSentenceGenerator extends AbstractSentenceGenerator {
                                                                                              pronoun.getPossession(),
                                                                                              tense);
           if (etre.isPresent()) {
-            String frSentence = pronoun.getTranslationValue(Lang.FR)
-                                + " "
-                                + etre.get().getTranslationValue(Lang.FR);
+            String frSentence = "";
+            if (tense != Tense.IMPERATIVE) {
+              frSentence += pronoun.getTranslationValue(Lang.FR) + " ";
+            }
+            frSentence += etre.get().getTranslationValue(Lang.FR);
             String dzSentence   = etre.get().getTranslationValue(Lang.DZ);
             String dzArSentence = etre.get().getTranslationValueAr(Lang.DZ);
             translations.add(new Translation(Lang.FR, frSentence));
             translations.add(new Translation(Lang.DZ, dzSentence, dzArSentence));
             Sentence sentence = new Sentence(translations);
-            sentence.setContent(SentenceContent.builder().pronouns(List.of(pronoun)).subtense(tense.getId()).build());
+            sentence.setContent(SentenceContent.builder().pronouns(List.of(pronoun)).verbs(List.of(verb)).subtense(tense.getId()).build());
             //     sentence.setRandomWords(generateRandomAlternativeWords(sentence.getContent()));
             result.add(sentence);
           }

@@ -33,6 +33,7 @@ public class PVSentenceGeneratorTest {
 //      assertTrue(result.contains("word_propositions")); @todo to add
       assertTrue(result.contains("additionnal_information"));
       assertTrue(result.contains("pronouns"));
+      assertTrue(result.contains("verbs"));
       assertTrue(result.contains("tense"));
     }
   }

@@ -51,8 +51,9 @@ public class PSentenceGeneratorTest {
       Map<Lang, List<String>> result = generator.generateRandomAlternativeWords(SentenceContent.builder()
                                                                                                .pronouns(List.of(pronoun))
                                                                                                .build());
-      assertEquals(alternativeCount, result.get(Lang.FR).size());
-      assertEquals(alternativeCount, result.get(Lang.DZ).size());
+      System.out.println(result.get(Lang.FR));
+      assertEquals(alternativeCount + 1, result.get(Lang.FR).size());
+      assertEquals(alternativeCount + 1, result.get(Lang.DZ).size());
     }
 
   }

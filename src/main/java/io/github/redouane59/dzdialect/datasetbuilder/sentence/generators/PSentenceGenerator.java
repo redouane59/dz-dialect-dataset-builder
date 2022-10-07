@@ -32,6 +32,8 @@ public class PSentenceGenerator extends AbstractSentenceGenerator {
 
     Set<String> frValues = new HashSet<>();
     Set<String> dzValues = new HashSet<>();
+    frValues.add(content.getPronouns().get(0).getTranslationValue(Lang.FR));
+    dzValues.add(content.getPronouns().get(0).getTranslationValue(Lang.DZ));
 
     int i = 0;
     while (i < getParameters().getAlternativeCount()) {
