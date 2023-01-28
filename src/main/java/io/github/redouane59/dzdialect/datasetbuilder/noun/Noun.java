@@ -26,8 +26,12 @@ public class Noun extends AbstractWord {
   @JsonProperty("deplacement_preposition")
   private       String             deplacementPrepositionId;*/
 
-  public Noun(NounType type) {
+  public Noun() {
     setWordType(WordType.NOUN);
+  }
+
+  public Noun(NounType type) {
+    this();
     this.type = type;
   }
 

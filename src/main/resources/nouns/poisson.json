@@ -1,21 +1,17 @@
 {
-  "id": "poisson",
-  "type": "FOOD",
-  "values": [
-    {
-      "singular": true,
-      "gender": "M",
-      "translations": [
-        {
-          "lang": "FR",
-          "value": "poisson"
-        },
-        {
-          "lang": "DZ",
-          "value": "7out",
-          "ar_value": "حوت"
-        }
-      ]
-    }
-  ]
+  "id" : "poisson",
+  "wordType" : "NOUN",
+  "values" : [ {
+    "translations" : [ {
+      "lang" : "FR",
+      "value" : "poisson"
+    }, {
+      "lang" : "DZ",
+      "value" : "7out",
+      "ar_value" : "حوت"
+    } ],
+    "gender" : "M",
+    "singular" : true
+  } ],
+  "type" : "FOOD"
 }

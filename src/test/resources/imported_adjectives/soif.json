@@ -1,0 +1,45 @@
+{
+  "id" : "soif",
+  "wordType" : "ADJECTIVE",
+  "values" : [ {
+    "translations" : [ {
+      "lang" : "FR",
+      "value" : "soif"
+    }, {
+      "lang" : "DZ",
+      "value" : "3atchane",
+      "ar_value" : "عطشان"
+    } ],
+    "gender" : "M",
+    "singular" : true,
+    "tense" : null
+  }, {
+    "translations" : [ {
+      "lang" : "FR",
+      "value" : "soif"
+    }, {
+      "lang" : "DZ",
+      "value" : "3atchana",
+      "ar_value" : "عطشانة"
+    } ],
+    "gender" : "F",
+    "singular" : true,
+    "tense" : null
+  }, {
+    "translations" : [ {
+      "lang" : "FR",
+      "value" : "soif"
+    }, {
+      "lang" : "DZ",
+      "value" : "3atchanine",
+      "ar_value" : "عطشانين"
+    } ],
+    "gender" : "X",
+    "singular" : false,
+    "tense" : null
+  } ],
+  "temporal" : false,
+  "definitive" : false,
+  "possible_nouns" : [ ],
+  "fr_aux_avoir" : false
+}

@@ -1,0 +1,45 @@
+{
+  "id" : "plein",
+  "wordType" : "ADJECTIVE",
+  "values" : [ {
+    "translations" : [ {
+      "lang" : "FR",
+      "value" : "plein"
+    }, {
+      "lang" : "DZ",
+      "value" : "m3abi",
+      "ar_value" : "معبي"
+    } ],
+    "gender" : "M",
+    "singular" : true,
+    "tense" : null
+  }, {
+    "translations" : [ {
+      "lang" : "FR",
+      "value" : "pleine"
+    }, {
+      "lang" : "DZ",
+      "value" : "m3abia",
+      "ar_value" : "معبية"
+    } ],
+    "gender" : "F",
+    "singular" : true,
+    "tense" : null
+  }, {
+    "translations" : [ {
+      "lang" : "FR",
+      "value" : "plein(e)s"
+    }, {
+      "lang" : "DZ",
+      "value" : "m3abyine",
+      "ar_value" : "معبيين"
+    } ],
+    "gender" : "X",
+    "singular" : false,
+    "tense" : null
+  } ],
+  "temporal" : false,
+  "definitive" : false,
+  "possible_nouns" : [ ],
+  "fr_aux_avoir" : false
+}

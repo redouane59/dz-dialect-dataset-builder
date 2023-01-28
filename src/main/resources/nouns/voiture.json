@@ -1,38 +1,28 @@
 {
-  "id": "voiture",
-  "type": "OBJECT",
-  "values": [
-    {
-      "singular": true,
-      "gender": "F",
-      "translations": [
-        {
-          "lang": "FR",
-          "value": "voiture"
-        },
-        {
-          "lang": "DZ",
-          "value": "tomobile",
-          "ar_value": "طوموبيل"
-        }
-      ]
-    },
-    {
-      "singular": false,
-      "gender": "F",
-      "translations": [
-        {
-          "lang": "FR",
-          "value": "voitures"
-        },
-        {
-          "lang": "DZ",
-          "value": "tomobile",
-          "ar_value": "طوموبيل"
-        }
-      ]
-    }
-  ],
-  "state_preposition": "dans_state",
-  "deplacement_preposition": "a_dep"
+  "id" : "voiture",
+  "wordType" : "NOUN",
+  "values" : [ {
+    "translations" : [ {
+      "lang" : "FR",
+      "value" : "voiture"
+    }, {
+      "lang" : "DZ",
+      "value" : "tomobile",
+      "ar_value" : "طوموبيل"
+    } ],
+    "gender" : "F",
+    "singular" : true
+  }, {
+    "translations" : [ {
+      "lang" : "FR",
+      "value" : "voitures"
+    }, {
+      "lang" : "DZ",
+      "value" : "tomobile",
+      "ar_value" : "طوموبيل"
+    } ],
+    "gender" : "F",
+    "singular" : false
+  } ],
+  "type" : "OBJECT"
 }

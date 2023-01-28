@@ -1,21 +1,17 @@
 {
-  "id": "pain",
-  "type": "FOOD",
-  "values": [
-    {
-      "singular": true,
-      "gender": "M",
-      "translations": [
-        {
-          "lang": "FR",
-          "value": "pain"
-        },
-        {
-          "lang": "DZ",
-          "value": "khoubz",
-          "ar_value": "خبز"
-        }
-      ]
-    }
-  ]
+  "id" : "pain",
+  "wordType" : "NOUN",
+  "values" : [ {
+    "translations" : [ {
+      "lang" : "FR",
+      "value" : "pain"
+    }, {
+      "lang" : "DZ",
+      "value" : "khoubz",
+      "ar_value" : "خبز"
+    } ],
+    "gender" : "M",
+    "singular" : true
+  } ],
+  "type" : "FOOD"
 }

@@ -1,5 +1,7 @@
 package io.github.redouane59.dzdialect.datasetbuilder.word.concrets;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import io.github.redouane59.dzdialect.datasetbuilder.enumerations.Gender;
 import io.github.redouane59.dzdialect.datasetbuilder.enumerations.Lang;
 import java.util.List;
@@ -14,6 +16,7 @@ import lombok.Setter;
 @Getter
 public class GenderedWord extends Word {
 
+  @JsonInclude(Include.NON_NULL)
   private Gender  gender;
   private boolean singular;
 

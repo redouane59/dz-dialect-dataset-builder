@@ -1,38 +1,28 @@
 {
-  "id": "femme",
-  "type": "PERSON",
-  "values": [
-    {
-      "singular": true,
-      "gender": "F",
-      "translations": [
-        {
-          "lang": "FR",
-          "value": "femme"
-        },
-        {
-          "lang": "DZ",
-          "value": "mra",
-          "ar_value": "مر"
-        }
-      ]
-    },
-    {
-      "singular": false,
-      "gender": "F",
-      "translations": [
-        {
-          "lang": "FR",
-          "value": "femmes"
-        },
-        {
-          "lang": "DZ",
-          "value": "nsa",
-          "ar_value": "نسا"
-        }
-      ]
-    }
-  ],
-  "state_preposition": "chez",
-  "deplacement_preposition": "chez"
+  "id" : "femme",
+  "wordType" : "NOUN",
+  "values" : [ {
+    "translations" : [ {
+      "lang" : "FR",
+      "value" : "femme"
+    }, {
+      "lang" : "DZ",
+      "value" : "mra",
+      "ar_value" : "مْرا"
+    } ],
+    "gender" : "F",
+    "singular" : true
+  }, {
+    "translations" : [ {
+      "lang" : "FR",
+      "value" : "femmes"
+    }, {
+      "lang" : "DZ",
+      "value" : "nsa",
+      "ar_value" : "نْسا"
+    } ],
+    "gender" : "F",
+    "singular" : false
+  } ],
+  "type" : "PERSON"
 }

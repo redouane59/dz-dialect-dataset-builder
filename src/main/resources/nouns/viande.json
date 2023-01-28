@@ -1,22 +1,17 @@
 {
-  "id": "viande",
-  "type": "FOOD",
-  "values": [
-    {
-      "singular": true,
-      "translations": [
-        {
-          "lang": "FR",
-          "value": "viande",
-          "gender": "F"
-        },
-        {
-          "lang": "DZ",
-          "value": "7em",
-          "ar_value": "لْحم",
-          "gender": "M"
-        }
-      ]
-    }
-  ]
+  "id" : "viande",
+  "wordType" : "NOUN",
+  "values" : [ {
+    "translations" : [ {
+      "lang" : "FR",
+      "value" : "viande"
+    }, {
+      "lang" : "DZ",
+      "value" : "7em",
+      "ar_value" : "لْحم"
+    } ],
+    "gender" : "F",
+    "singular" : true
+  } ],
+  "type" : "FOOD"
 }

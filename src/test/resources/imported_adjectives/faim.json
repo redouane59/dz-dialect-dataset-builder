@@ -1,0 +1,45 @@
+{
+  "id" : "faim",
+  "wordType" : "ADJECTIVE",
+  "values" : [ {
+    "translations" : [ {
+      "lang" : "FR",
+      "value" : "faim"
+    }, {
+      "lang" : "DZ",
+      "value" : "dji3an",
+      "ar_value" : "جيعان"
+    } ],
+    "gender" : "M",
+    "singular" : true,
+    "tense" : null
+  }, {
+    "translations" : [ {
+      "lang" : "FR",
+      "value" : "faim"
+    }, {
+      "lang" : "DZ",
+      "value" : "dji3ana",
+      "ar_value" : "جيعانة"
+    } ],
+    "gender" : "F",
+    "singular" : true,
+    "tense" : null
+  }, {
+    "translations" : [ {
+      "lang" : "FR",
+      "value" : "faim"
+    }, {
+      "lang" : "DZ",
+      "value" : "dji3anin",
+      "ar_value" : "جيعانين"
+    } ],
+    "gender" : "X",
+    "singular" : false,
+    "tense" : null
+  } ],
+  "temporal" : false,
+  "definitive" : false,
+  "possible_nouns" : [ ],
+  "fr_aux_avoir" : false
+}

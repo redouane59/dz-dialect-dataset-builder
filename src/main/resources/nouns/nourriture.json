@@ -1,21 +1,17 @@
 {
-  "id": "nourriture",
-  "type": "FOOD",
-  "values": [
-    {
-      "singular": true,
-      "gender": "F",
-      "translations": [
-        {
-          "lang": "FR",
-          "value": "nourriture"
-        },
-        {
-          "lang": "DZ",
-          "value": "makla",
-          "ar_value": "ماكلا"
-        }
-      ]
-    }
-  ]
+  "id" : "nourriture",
+  "wordType" : "NOUN",
+  "values" : [ {
+    "translations" : [ {
+      "lang" : "FR",
+      "value" : "nourriture"
+    }, {
+      "lang" : "DZ",
+      "value" : "makla",
+      "ar_value" : "ماكلا"
+    } ],
+    "gender" : "F",
+    "singular" : true
+  } ],
+  "type" : "FOOD"
 }

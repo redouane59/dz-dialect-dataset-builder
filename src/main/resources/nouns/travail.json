@@ -1,24 +1,17 @@
 {
-  "id": "travail",
-  "type": "TASK",
-  "values": [
-    {
-      "singular": true,
-      "translations": [
-        {
-          "lang": "FR",
-          "value": "travail",
-          "gender": "M"
-        },
-        {
-          "lang": "DZ",
-          "value": "khedma",
-          "ar_value": "خدما",
-          "gender": "F"
-        }
-      ]
-    }
-  ],
-  "state_preposition": "a_state",
-  "deplacement_preposition": "a_dep"
+  "id" : "travail",
+  "wordType" : "NOUN",
+  "values" : [ {
+    "translations" : [ {
+      "lang" : "FR",
+      "value" : "travail"
+    }, {
+      "lang" : "DZ",
+      "value" : "khedma",
+      "ar_value" : "خدما"
+    } ],
+    "gender" : "M",
+    "singular" : true
+  } ],
+  "type" : "TASK"
 }

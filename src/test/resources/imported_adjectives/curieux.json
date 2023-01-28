@@ -1,0 +1,45 @@
+{
+  "id" : "curieux",
+  "wordType" : "ADJECTIVE",
+  "values" : [ {
+    "translations" : [ {
+      "lang" : "FR",
+      "value" : "curieux"
+    }, {
+      "lang" : "DZ",
+      "value" : "9ar3aj",
+      "ar_value" : "قرعاج"
+    } ],
+    "gender" : "M",
+    "singular" : true,
+    "tense" : null
+  }, {
+    "translations" : [ {
+      "lang" : "FR",
+      "value" : "curieuse"
+    }, {
+      "lang" : "DZ",
+      "value" : "9ar3aja",
+      "ar_value" : "قرعاجة"
+    } ],
+    "gender" : "F",
+    "singular" : true,
+    "tense" : null
+  }, {
+    "translations" : [ {
+      "lang" : "FR",
+      "value" : "curieux(ses)"
+    }, {
+      "lang" : "DZ",
+      "value" : "9ar3ajine",
+      "ar_value" : "قرعاجين"
+    } ],
+    "gender" : "X",
+    "singular" : false,
+    "tense" : null
+  } ],
+  "temporal" : false,
+  "definitive" : false,
+  "possible_nouns" : [ ],
+  "fr_aux_avoir" : false
+}

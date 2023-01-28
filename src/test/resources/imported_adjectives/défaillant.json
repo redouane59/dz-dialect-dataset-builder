@@ -1,0 +1,45 @@
+{
+  "id" : "défaillant",
+  "wordType" : "ADJECTIVE",
+  "values" : [ {
+    "translations" : [ {
+      "lang" : "FR",
+      "value" : "défaillant"
+    }, {
+      "lang" : "DZ",
+      "value" : "mkhaser",
+      "ar_value" : "مخسّر"
+    } ],
+    "gender" : "M",
+    "singular" : true,
+    "tense" : null
+  }, {
+    "translations" : [ {
+      "lang" : "FR",
+      "value" : "défaillant(e)"
+    }, {
+      "lang" : "DZ",
+      "value" : "mkhasra",
+      "ar_value" : "مخسرة"
+    } ],
+    "gender" : "F",
+    "singular" : true,
+    "tense" : null
+  }, {
+    "translations" : [ {
+      "lang" : "FR",
+      "value" : "défaillant(e)s"
+    }, {
+      "lang" : "DZ",
+      "value" : "mkhasrin",
+      "ar_value" : "مخسرين"
+    } ],
+    "gender" : "X",
+    "singular" : false,
+    "tense" : null
+  } ],
+  "temporal" : false,
+  "definitive" : false,
+  "possible_nouns" : [ ],
+  "fr_aux_avoir" : false
+}

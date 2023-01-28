@@ -1,21 +1,17 @@
 {
-  "id": "poulet",
-  "type": "FOOD",
-  "values": [
-    {
-      "singular": true,
-      "gender": "M",
-      "translations": [
-        {
-          "lang": "FR",
-          "value": "poulet"
-        },
-        {
-          "lang": "DZ",
-          "value": "djaadj",
-          "ar_value": "جاج"
-        }
-      ]
-    }
-  ]
+  "id" : "poulet",
+  "wordType" : "NOUN",
+  "values" : [ {
+    "translations" : [ {
+      "lang" : "FR",
+      "value" : "poulet"
+    }, {
+      "lang" : "DZ",
+      "value" : "djaadj",
+      "ar_value" : "جاج"
+    } ],
+    "gender" : "M",
+    "singular" : true
+  } ],
+  "type" : "FOOD"
 }

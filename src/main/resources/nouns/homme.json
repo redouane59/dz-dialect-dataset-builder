@@ -1,38 +1,28 @@
 {
-  "id": "homme",
-  "type": "PERSON",
-  "values": [
-    {
-      "singular": true,
-      "gender": "M",
-      "translations": [
-        {
-          "lang": "FR",
-          "value": "homme"
-        },
-        {
-          "lang": "DZ",
-          "value": "radjel",
-          "ar_value": "رجل"
-        }
-      ]
-    },
-    {
-      "singular": false,
-      "gender": "M",
-      "translations": [
-        {
-          "lang": "FR",
-          "value": "hommes"
-        },
-        {
-          "lang": "DZ",
-          "value": "rdjal",
-          "ar_value": "رجال"
-        }
-      ]
-    }
-  ],
-  "state_preposition": "chez",
-  "deplacement_preposition": "chez"
+  "id" : "homme",
+  "wordType" : "NOUN",
+  "values" : [ {
+    "translations" : [ {
+      "lang" : "FR",
+      "value" : "homme"
+    }, {
+      "lang" : "DZ",
+      "value" : "radjel",
+      "ar_value" : "راجل"
+    } ],
+    "gender" : "M",
+    "singular" : true
+  }, {
+    "translations" : [ {
+      "lang" : "FR",
+      "value" : "hommes"
+    }, {
+      "lang" : "DZ",
+      "value" : "rdjal",
+      "ar_value" : "رْخجال"
+    } ],
+    "gender" : "M",
+    "singular" : false
+  } ],
+  "type" : "PERSON"
 }

@@ -1,0 +1,45 @@
+{
+  "id" : "cassé",
+  "wordType" : "ADJECTIVE",
+  "values" : [ {
+    "translations" : [ {
+      "lang" : "FR",
+      "value" : "cassé"
+    }, {
+      "lang" : "DZ",
+      "value" : "mkasar",
+      "ar_value" : "مكسّر"
+    } ],
+    "gender" : "M",
+    "singular" : true,
+    "tense" : null
+  }, {
+    "translations" : [ {
+      "lang" : "FR",
+      "value" : "cassée"
+    }, {
+      "lang" : "DZ",
+      "value" : "mkasra",
+      "ar_value" : "مكسرة"
+    } ],
+    "gender" : "F",
+    "singular" : true,
+    "tense" : null
+  }, {
+    "translations" : [ {
+      "lang" : "FR",
+      "value" : "cassé(e)s"
+    }, {
+      "lang" : "DZ",
+      "value" : "mkasrin",
+      "ar_value" : "مكسرين"
+    } ],
+    "gender" : "X",
+    "singular" : false,
+    "tense" : null
+  } ],
+  "temporal" : false,
+  "definitive" : false,
+  "possible_nouns" : [ ],
+  "fr_aux_avoir" : false
+}

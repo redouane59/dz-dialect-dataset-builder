@@ -4,6 +4,7 @@ import static io.github.redouane59.dzdialect.datasetbuilder.Config.OBJECT_MAPPER
 
 import io.github.redouane59.dzdialect.datasetbuilder.adjective.Adjective;
 import io.github.redouane59.dzdialect.datasetbuilder.helper.ResourceList;
+import io.github.redouane59.dzdialect.datasetbuilder.noun.Noun;
 import io.github.redouane59.dzdialect.datasetbuilder.pronoun.AbstractPronouns;
 import io.github.redouane59.dzdialect.datasetbuilder.verb.Verb;
 import io.github.redouane59.dzdialect.datasetbuilder.word.concrets.PossessiveWord;
@@ -21,6 +22,7 @@ public class DB {
 
   public final static Set<Verb>        VERBS      = new HashSet<>();
   public final static Set<Adjective>   ADJECTIVES = new HashSet<>();
+  public final static Set<Noun>        NOUNS      = new HashSet<>();
   public static       Verb             AUX_ETRE;
   public static       Verb             AUX_AVOIR;
   public static       AbstractPronouns PERSONAL_PRONOUNS;
@@ -29,6 +31,7 @@ public class DB {
     initAbstractPronouns();
     initVerbs();
     initAdjectives();
+    initNouns();
     AUX_ETRE  = DB.VERBS.stream().filter(v -> v.getId().equals("être")).findFirst().get();
     AUX_AVOIR = DB.VERBS.stream().filter(v -> v.getId().equals("avoir")).findFirst().get();
   }
@@ -103,5 +106,27 @@ public class DB {
     System.out.println(ADJECTIVES.size() + " adjectives loaded");
   }
 
+  public static void initNouns() {
+    NOUNS.clear();
+/*    Adjective[] adjectiveConfigurations = new Adjective[]{};
+    try {
+      adjectiveConfigurations =
+          OBJECT_MAPPER.readValue(new File("./src/main/resources/adjectives/.adjective_config.json"), Adjective[].class);
+    } catch (Exception e) {
+      System.err.println("could not load adjective configurations " + e.getMessage());
+      e.printStackTrace();
+    }*/
+    Set<String> files = new HashSet<>(ResourceList.getResources(Pattern.compile(".*nouns.*json")));
+    for (String fileName : files) {
+      try {
+        Noun noun = OBJECT_MAPPER.readValue(new File(fileName), Noun.class);
+        NOUNS.add(noun);
+      } catch (IOException e) {
+        System.err.println("could not load noun file " + fileName);
+        e.printStackTrace();
+      }
+    }
+    System.out.println(NOUNS.size() + " adjectives loaded");
+  }
 
 }
