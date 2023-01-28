@@ -1,0 +1,26 @@
+{
+  "id" : "homme",
+  "wordType" : "NOUN",
+  "values" : [ {
+    "translations" : [ {
+      "lang" : "FR",
+      "value" : "homme"
+    }, {
+      "lang" : "DZ",
+      "value" : "radjel",
+      "ar_value" : "راجل"
+    } ],
+    "gender" : "M"
+  }, {
+    "translations" : [ {
+      "lang" : "FR",
+      "value" : "hommes"
+    }, {
+      "lang" : "DZ",
+      "value" : "rdjal",
+      "ar_value" : "رْخجال"
+    } ],
+    "gender" : "M"
+  } ],
+  "type" : "PERSON"
+}

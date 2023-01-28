@@ -1,0 +1,18 @@
+{
+  "id" : "plage",
+  "wordType" : "NOUN",
+  "values" : [ {
+    "translations" : [ {
+      "lang" : "FR",
+      "value" : "plage",
+      "gender" : "F"
+    }, {
+      "lang" : "DZ",
+      "value" : "b7ar",
+      "gender" : "M",
+      "ar_value" : "بْحَرْ"
+    } ],
+    "gender" : null
+  } ],
+  "type" : "PLACE"
+}

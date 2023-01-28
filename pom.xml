@@ -49,6 +49,12 @@
       <groupId>com.fasterxml.jackson.core</groupId>
       <version>2.13.4</version>
     </dependency>
+    <dependency>
+      <artifactId>gson</artifactId>
+      <groupId>com.google.code.gson</groupId>
+      <version>2.10.1</version>
+    </dependency>
+
 
   </dependencies>
   <groupId>org.example</groupId>

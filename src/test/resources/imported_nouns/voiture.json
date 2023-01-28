@@ -1,0 +1,26 @@
+{
+  "id" : "voiture",
+  "wordType" : "NOUN",
+  "values" : [ {
+    "translations" : [ {
+      "lang" : "FR",
+      "value" : "voiture"
+    }, {
+      "lang" : "DZ",
+      "value" : "tomobile",
+      "ar_value" : "طوموبيل"
+    } ],
+    "gender" : "F"
+  }, {
+    "translations" : [ {
+      "lang" : "FR",
+      "value" : "voitures"
+    }, {
+      "lang" : "DZ",
+      "value" : "tomobile",
+      "ar_value" : "طوموبيل"
+    } ],
+    "gender" : "F"
+  } ],
+  "type" : "OBJECT"
+}

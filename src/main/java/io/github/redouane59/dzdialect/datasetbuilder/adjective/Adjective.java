@@ -42,7 +42,7 @@ public class Adjective extends AbstractWord {
     setWordType(WordType.ADJECTIVE);
   }
 
-  public static Set<Adjective> deserializeFromList(List<List<String>> entries, final boolean removeHeader) {
+  public static Set<Adjective> deserializeFromList(List<List<String>> entries) {
     int adjectiveIdIndex = 0;
     int singularIndex    = 1;
     int genderIndex      = 2;

@@ -2,13 +2,14 @@ package io.github.redouane59.dzdialect.datasetbuilder.sentence;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
-import com.fasterxml.jackson.annotation.JsonProperty;
 import io.github.redouane59.dzdialect.datasetbuilder.adjective.Adjective;
 import io.github.redouane59.dzdialect.datasetbuilder.enumerations.Lang;
+import io.github.redouane59.dzdialect.datasetbuilder.enumerations.RootLang;
 import io.github.redouane59.dzdialect.datasetbuilder.verb.Verb;
 import io.github.redouane59.dzdialect.datasetbuilder.word.concrets.PossessiveWord;
 import io.github.redouane59.dzdialect.datasetbuilder.word.concrets.Translation;
 import io.github.redouane59.dzdialect.datasetbuilder.word.concrets.Word;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
@@ -23,11 +24,10 @@ import lombok.NoArgsConstructor;
 @Data
 public class Sentence extends Word {
 
-  @JsonProperty("additional_information")
   private SentenceContent         content;
-  @JsonProperty("word_propositions")
   @JsonInclude(Include.NON_EMPTY)
   private Map<Lang, List<String>> randomWords = new HashMap<>();
+  private SentenceSchema          sentenceSchema;
 
   public Sentence(List<Translation> translations) {
     super(translations);
@@ -36,6 +36,14 @@ public class Sentence extends Word {
   public Map<Lang, List<String>> getRandomWords() {
     randomWords.forEach((key, value) -> Collections.shuffle(value));
     return randomWords;
+  }
+
+  public List<String> getSplittedWords(Lang lang) {
+    String sentence = getTranslationValue(lang);
+    if (lang.getRootLang() == RootLang.FR) {
+      sentence = sentence.replace("'", "' ");
+    }
+    return Arrays.asList(sentence.split(" "));
   }
 
   @Data

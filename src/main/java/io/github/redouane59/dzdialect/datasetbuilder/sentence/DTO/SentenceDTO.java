@@ -6,6 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import io.github.redouane59.dzdialect.datasetbuilder.enumerations.Lang;
 import io.github.redouane59.dzdialect.datasetbuilder.sentence.Sentence;
 import io.github.redouane59.dzdialect.datasetbuilder.sentence.Sentence.SentenceContent;
+import io.github.redouane59.dzdialect.datasetbuilder.sentence.SentenceSchema;
 import io.github.redouane59.dzdialect.datasetbuilder.word.abstracts.AbstractWord;
 import io.github.redouane59.dzdialect.datasetbuilder.word.concrets.PossessiveWord;
 import java.util.ArrayList;
@@ -26,13 +27,16 @@ public class SentenceDTO extends WordDTO {
   private WordPropositionsDTO wordPropositions;
   @JsonProperty("additionnal_information")
   private SentenceContentDTO  sentenceContent;
+  @JsonProperty("sentence_schema")
+  private SentenceSchema      sentenceSchema;
 
   public SentenceDTO(Sentence sentence) {
     super(sentence);
     if (sentence.getContent() != null) {
       this.sentenceContent = new SentenceContentDTO(sentence.getContent());
     }
-    wordPropositions = new WordPropositionsDTO(sentence.getRandomWords());
+    wordPropositions    = new WordPropositionsDTO(sentence.getRandomWords());
+    this.sentenceSchema = sentence.getSentenceSchema();
   }
 
   @NoArgsConstructor

@@ -1,0 +1,16 @@
+{
+  "id" : "travail",
+  "wordType" : "NOUN",
+  "values" : [ {
+    "translations" : [ {
+      "lang" : "FR",
+      "value" : "travail"
+    }, {
+      "lang" : "DZ",
+      "value" : "khedma",
+      "ar_value" : "خدما"
+    } ],
+    "gender" : "M"
+  } ],
+  "type" : "TASK"
+}

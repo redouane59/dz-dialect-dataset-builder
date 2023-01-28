@@ -1,0 +1,26 @@
+{
+  "id" : "rue",
+  "wordType" : "NOUN",
+  "values" : [ {
+    "translations" : [ {
+      "lang" : "FR",
+      "value" : "rue"
+    }, {
+      "lang" : "DZ",
+      "value" : "zon9a",
+      "ar_value" : "زنقا"
+    } ],
+    "gender" : "F"
+  }, {
+    "translations" : [ {
+      "lang" : "FR",
+      "value" : "rues"
+    }, {
+      "lang" : "DZ",
+      "value" : "zna9",
+      "ar_value" : "زْنق"
+    } ],
+    "gender" : "F"
+  } ],
+  "type" : "PLACE"
+}

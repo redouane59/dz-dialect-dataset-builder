@@ -1,0 +1,26 @@
+{
+  "id" : "chambre",
+  "wordType" : "NOUN",
+  "values" : [ {
+    "translations" : [ {
+      "lang" : "FR",
+      "value" : "chambre"
+    }, {
+      "lang" : "DZ",
+      "value" : "bit",
+      "ar_value" : "بيت"
+    } ],
+    "gender" : "F"
+  }, {
+    "translations" : [ {
+      "lang" : "FR",
+      "value" : "chambres"
+    }, {
+      "lang" : "DZ",
+      "value" : "biout",
+      "ar_value" : "بْيوت"
+    } ],
+    "gender" : "F"
+  } ],
+  "type" : "PLACE"
+}

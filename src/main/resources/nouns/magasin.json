@@ -1,0 +1,38 @@
+{
+  "id": "magasin",
+  "type": "PLACE",
+  "values": [
+    {
+      "singular": true,
+      "gender": "M",
+      "translations": [
+        {
+          "lang": "FR",
+          "value": "magasin"
+        },
+        {
+          "lang": "DZ",
+          "value": "7anout",
+          "ar_value": "حانوت"
+        }
+      ]
+    },
+    {
+      "singular": false,
+      "gender": "M",
+      "translations": [
+        {
+          "lang": "FR",
+          "value": "magasins"
+        },
+        {
+          "lang": "DZ",
+          "value": "7ouanet",
+          "ar_value": "حْوانت"
+        }
+      ]
+    }
+  ],
+  "state_preposition": "dans_state",
+  "deplacement_preposition": "a_dep"
+}
