@@ -10,6 +10,7 @@ import io.github.redouane59.dzdialect.datasetbuilder.adjective.Adjective;
 import io.github.redouane59.dzdialect.datasetbuilder.gsheets.SheetsHelper;
 import io.github.redouane59.dzdialect.datasetbuilder.helper.WordFromCSVSerializer;
 import io.github.redouane59.dzdialect.datasetbuilder.noun.Noun;
+import io.github.redouane59.dzdialect.datasetbuilder.verb.Verb;
 import io.github.redouane59.dzdialect.datasetbuilder.word.concrets.Word;
 import java.io.IOException;
 import java.nio.file.Paths;
@@ -76,6 +77,26 @@ class DataIntegrationTest {
     Set<Noun> nouns = Noun.deserializeFromList(result);
 
     nouns.forEach(o -> {
+      ObjectMapper mapper = new ObjectMapper();
+      SimpleModule module = new SimpleModule();
+      module.addSerializer(Word.class, new WordFromCSVSerializer());
+      mapper.registerModule(module);
+      try {
+        System.out.println(Config.OBJECT_MAPPER.writeValueAsString(o));
+        mapper.writerWithDefaultPrettyPrinter().writeValue(Paths.get("./src/test/resources/imported_nouns/" + o.getId() + ".json").toFile(), o);
+      } catch (Exception e) {
+        e.printStackTrace();
+      }
+    });
+  }
+
+  @Test
+  public void importVerbsFromSheets() throws GeneralSecurityException, IOException {
+    List<List<String>> result = SheetsHelper.readLine("verbs!A2:F");
+    assertNotNull(result);
+    Set<Verb> verbs = Verb.deserializeFromList(result);
+
+    verbs.forEach(o -> {
       ObjectMapper mapper = new ObjectMapper();
       SimpleModule module = new SimpleModule();
       module.addSerializer(Word.class, new WordFromCSVSerializer());

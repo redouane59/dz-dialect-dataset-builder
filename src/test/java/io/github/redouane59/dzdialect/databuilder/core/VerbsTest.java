@@ -1,4 +1,4 @@
-package io.github.redouane59.dzdialect.databuilder;
+package io.github.redouane59.dzdialect.databuilder.core;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;

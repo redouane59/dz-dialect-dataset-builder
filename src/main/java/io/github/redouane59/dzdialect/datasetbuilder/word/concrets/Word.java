@@ -13,6 +13,10 @@ import lombok.Setter;
 @NoArgsConstructor
 public class Word {
 
+  public Word(String dz, String fr) {
+    this.translations = List.of(new Translation(Lang.DZ, dz), new Translation(Lang.FR, fr));
+  }
+
   @Setter
   @Getter
   private List<Translation> translations = new ArrayList<>();

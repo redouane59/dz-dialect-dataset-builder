@@ -16,9 +16,13 @@ public class WordDTO {
   private String fr;
 
   public WordDTO(Word word) {
-    this.dz   = word.getTranslationValue(Lang.DZ);
-    this.dzAr = word.getTranslationValueAr(Lang.DZ);
-    this.fr   = word.getTranslationValue(Lang.FR);
+    if (word != null) {
+      this.dz   = word.getTranslationValue(Lang.DZ);
+      this.dzAr = word.getTranslationValueAr(Lang.DZ);
+      this.fr   = word.getTranslationValue(Lang.FR);
+    } else {
+      System.err.println("null word");
+    }
   }
 
 }

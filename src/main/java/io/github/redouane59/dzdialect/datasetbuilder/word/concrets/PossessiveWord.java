@@ -29,6 +29,11 @@ public class PossessiveWord extends GenderedWord implements Comparable {
     this.index      = index;
   }
 
+  public PossessiveWord(String dz, String fr, Gender gender, boolean singular, Possession possession) {
+    super(List.of(new Translation(Lang.DZ, dz), new Translation(Lang.FR, fr)), gender, singular);
+    this.possession = possession;
+  }
+
   @Override
   public int compareTo(final Object o) {
     return (getIndex() - ((Conjugation) o).getIndex());

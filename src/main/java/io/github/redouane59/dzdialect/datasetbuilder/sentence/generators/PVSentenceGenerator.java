@@ -71,39 +71,41 @@ public class PVSentenceGenerator extends AbstractSentenceGenerator {
         conjugationOpt =
         verb.getConjugationByGenderSingularPossessionAndTense(pronoun.getGender(), pronoun.isSingular(), pronoun.getPossession(), Tense.PRESENT);
 
-    String      dzSentence    = conjugationOpt.get().getTranslationValue(Lang.DZ);
-    String      frVerb        = conjugationOpt.get().getTranslationValue(Lang.FR);
-    String      frSentence    = pronoun.getTranslationValue(Lang.FR) + " " + frVerb;
-    Translation frTranslation = new Translation(Lang.FR, frSentence);
-    Translation dzTranslation = new Translation(Lang.DZ, dzSentence);
-    Sentence    sentence      = new Sentence(List.of(frTranslation, dzTranslation));
-    dzValues.addAll(sentence.getSplittedWords(Lang.DZ));
-    frValues.addAll(sentence.getSplittedWords(Lang.FR));
+    if (conjugationOpt.isPresent()) {
+      String      dzSentence    = conjugationOpt.get().getTranslationValue(Lang.DZ);
+      String      frVerb        = conjugationOpt.get().getTranslationValue(Lang.FR);
+      String      frSentence    = pronoun.getTranslationValue(Lang.FR) + " " + frVerb;
+      Translation frTranslation = new Translation(Lang.FR, frSentence);
+      Translation dzTranslation = new Translation(Lang.DZ, dzSentence);
+      Sentence    sentence      = new Sentence(List.of(frTranslation, dzTranslation));
+      dzValues.addAll(sentence.getSplittedWords(Lang.DZ));
+      frValues.addAll(sentence.getSplittedWords(Lang.FR));
 
-    int i = 0;
-    while (i < getParameters().getAlternativeCount()) {
-      PossessiveWord randomPronoun = PSentenceGenerator.getRandomPronounWithOneSimilitude(pronoun);
-      conjugationOpt =
-          verb.getConjugationByGenderSingularPossessionAndTense(randomPronoun.getGender(),
-                                                                randomPronoun.isSingular(),
-                                                                randomPronoun.getPossession(),
-                                                                Tense.PRESENT);
-      if (conjugationOpt.isPresent()) {
-        dzSentence    = conjugationOpt.get().getTranslationValue(Lang.DZ);
-        frVerb        = conjugationOpt.get().getTranslationValue(Lang.FR);
-        frSentence    = randomPronoun.getTranslationValue(Lang.FR) + " " + frVerb;
-        frTranslation = new Translation(Lang.FR, frSentence);
-        dzTranslation = new Translation(Lang.DZ, dzSentence);
-        sentence      = new Sentence(List.of(frTranslation, dzTranslation));
-        if (!dzValues.contains(dzSentence)) {
-          dzValues.addAll(sentence.getSplittedWords(Lang.DZ));
-          frValues.addAll(sentence.getSplittedWords(Lang.FR));
-          i++;
+      int i = 0;
+      while (i < getParameters().getAlternativeCount()) {
+        PossessiveWord randomPronoun = PSentenceGenerator.getRandomPronounWithOneSimilitude(pronoun);
+        conjugationOpt =
+            verb.getConjugationByGenderSingularPossessionAndTense(randomPronoun.getGender(),
+                                                                  randomPronoun.isSingular(),
+                                                                  randomPronoun.getPossession(),
+                                                                  Tense.PRESENT);
+        if (conjugationOpt.isPresent()) {
+          dzSentence    = conjugationOpt.get().getTranslationValue(Lang.DZ);
+          frVerb        = conjugationOpt.get().getTranslationValue(Lang.FR);
+          frSentence    = randomPronoun.getTranslationValue(Lang.FR) + " " + frVerb;
+          frTranslation = new Translation(Lang.FR, frSentence);
+          dzTranslation = new Translation(Lang.DZ, dzSentence);
+          sentence      = new Sentence(List.of(frTranslation, dzTranslation));
+          if (!dzValues.contains(dzSentence)) {
+            dzValues.addAll(sentence.getSplittedWords(Lang.DZ));
+            frValues.addAll(sentence.getSplittedWords(Lang.FR));
+            i++;
+          }
         }
       }
+      result.put(Lang.FR, new ArrayList<>(frValues));
+      result.put(Lang.DZ, new ArrayList<>(dzValues));
     }
-    result.put(Lang.FR, new ArrayList<>(frValues));
-    result.put(Lang.DZ, new ArrayList<>(dzValues));
     return result;
   }
 

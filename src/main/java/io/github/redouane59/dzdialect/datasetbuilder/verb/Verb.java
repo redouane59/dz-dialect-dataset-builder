@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import io.github.redouane59.dzdialect.datasetbuilder.DB;
 import io.github.redouane59.dzdialect.datasetbuilder.enumerations.Gender;
 import io.github.redouane59.dzdialect.datasetbuilder.enumerations.Lang;
 import io.github.redouane59.dzdialect.datasetbuilder.enumerations.RootLang;
@@ -15,9 +16,12 @@ import io.github.redouane59.dzdialect.datasetbuilder.word.ConjugationListDeseria
 import io.github.redouane59.dzdialect.datasetbuilder.word.abstracts.AbstractWord;
 import io.github.redouane59.dzdialect.datasetbuilder.word.concrets.Possession;
 import io.github.redouane59.dzdialect.datasetbuilder.word.concrets.PossessiveWord;
+import io.github.redouane59.dzdialect.datasetbuilder.word.concrets.Translation;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Optional;
+import java.util.Set;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -108,5 +112,53 @@ public class Verb extends AbstractWord {
                                                                  subject.isSingular(),
                                                                  subject.getPossession(),
                                                                  tense);
+  }
+
+  public static Set<Verb> deserializeFromList(List<List<String>> entries) {
+    int       verbIdIndex    = 0;
+    int       tenseIndex     = 1;
+    int       pronounIndex   = 2;
+    int       frValueIndex   = 3;
+    int       dzValueIndex   = 4;
+    int       dzValueArIndex = 5;
+    int       orderIndex     = 6;
+    Set<Verb> verbs          = new HashSet<>();
+
+    for (List<String> values : entries) {
+      Verb verb;
+      if (values.size() >= 6) {
+        Optional<Verb> verbOpt = DB.VERBS.stream().filter(o -> o.getId().equals(values.get(verbIdIndex))).findFirst();
+        if (verbOpt.isEmpty()) { // new verb
+          verb = new Verb();
+          verb.setId(values.get(verbIdIndex));
+          verbs.add(verb);
+        } else {
+          verb = verbOpt.get();
+        }
+
+        try {
+
+          Subtense tense     = Subtense.valueOf(values.get(tenseIndex));
+          String   pronoun   = values.get(pronounIndex);
+          String   frValue   = values.get(frValueIndex);
+          String   dzValue   = values.get(dzValueIndex);
+          String   dzValueAr = null;
+          if (values.size() > dzValueArIndex) {
+            dzValueAr = values.get(dzValueArIndex);
+          }
+          int order = Integer.parseInt(values.get(orderIndex));
+
+          Conjugation conjugation = new Conjugation(List.of(new Translation(Lang.DZ, dzValue, dzValueAr), new Translation(Lang.FR, frValue)),
+                                                    Gender.X, true, Possession.I, tense, order);
+          verb.getValues().add(conjugation);
+
+        } catch (Exception e) {
+          e.printStackTrace();
+        }
+      } else {
+        System.err.println("adjective ignored because not enough values : " + values.get(0));
+      }
+    }
+    return verbs;
   }
 }
