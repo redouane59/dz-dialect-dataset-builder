@@ -2,15 +2,24 @@ package io.github.redouane59.dzdialect.datasetbuilder;
 
 import static io.github.redouane59.dzdialect.datasetbuilder.Config.OBJECT_MAPPER;
 
+import com.opencsv.CSVParserBuilder;
+import com.opencsv.CSVReader;
+import com.opencsv.CSVReaderBuilder;
 import io.github.redouane59.dzdialect.datasetbuilder.adjective.Adjective;
+import io.github.redouane59.dzdialect.datasetbuilder.enumerations.Gender;
 import io.github.redouane59.dzdialect.datasetbuilder.helper.ResourceList;
 import io.github.redouane59.dzdialect.datasetbuilder.noun.Noun;
 import io.github.redouane59.dzdialect.datasetbuilder.pronoun.AbstractPronouns;
 import io.github.redouane59.dzdialect.datasetbuilder.verb.Verb;
 import io.github.redouane59.dzdialect.datasetbuilder.word.concrets.Location;
+import io.github.redouane59.dzdialect.datasetbuilder.word.concrets.Possession;
 import io.github.redouane59.dzdialect.datasetbuilder.word.concrets.PossessiveWord;
+import io.github.redouane59.dzdialect.datasetbuilder.word.concrets.Word;
 import java.io.File;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.nio.charset.StandardCharsets;
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.List;
@@ -27,7 +36,37 @@ public class DB {
   public static       Verb             AUX_ETRE;
   public static       Verb             AUX_AVOIR;
   public static       AbstractPronouns PERSONAL_PRONOUNS;
-  public static       Set<Location>    LOCATION   = new HashSet<>();
+  public static       Set<Location>    LOCATIONS  = new HashSet<>();
+  public static       Set<Word>        PERSONS    = new HashSet<>();
+
+  // to fix
+  public static List<PossessiveWord> BROTHER_ENDING = List.of(
+      new PossessiveWord("ya", "mon", Gender.X, true, Possession.I),
+      new PossessiveWord("ek", "ton", Gender.X, true, Possession.YOU),
+      new PossessiveWord("h", "son", Gender.M, true, Possession.OTHER),
+      new PossessiveWord("ha", "son", Gender.X, true, Possession.OTHER),
+      new PossessiveWord("na", "notre", Gender.X, false, Possession.I),
+      new PossessiveWord("koum", "votre", Gender.X, false, Possession.YOU),
+      new PossessiveWord("houm", "leur", Gender.X, false, Possession.OTHER)
+  );
+  public static List<PossessiveWord> SISTER_ENDING  = List.of(
+      new PossessiveWord("i", "ma", Gender.X, true, Possession.I),
+      new PossessiveWord("ek", "ta", Gender.X, true, Possession.YOU),
+      new PossessiveWord("ou", "sa", Gender.M, true, Possession.OTHER),
+      new PossessiveWord("ha", "sa", Gender.X, true, Possession.OTHER),
+      new PossessiveWord("na", "notre", Gender.X, false, Possession.I),
+      new PossessiveWord("koum", "votre", Gender.X, false, Possession.YOU),
+      new PossessiveWord("houm", "leur", Gender.X, false, Possession.OTHER)
+  );
+/*
+  public static Word                 BROTHER        = new Word("khou", "frère");
+  public static Word                 BROTHERS       = new Word("khawa", "frères");
+  public static Word                 SISTER         = new Word("kht", "soeur");
+  public static Word                 SISTERS        = new Word("khouatet", "soeurs");
+  public static Word                 DAUGTHER       = new Word("bnet", "filles");
+  public static Word                 SON            = new Word("wled", "garçons");
+  public static Word                 CHILDREN       = new Word("drari", "enfants");
+*/
 
   public static void init() throws IOException {
     initAbstractPronouns();
@@ -35,37 +74,61 @@ public class DB {
     initAdjectives();
     initNouns();
     initLocations();
+    initPersons();
     AUX_ETRE  = DB.VERBS.stream().filter(v -> v.getId().equals("être")).findFirst().get();
     AUX_AVOIR = DB.VERBS.stream().filter(v -> v.getId().equals("avoir")).findFirst().get();
+    System.out.println();
+  }
+
+  private static void initPersons() {
+    String      csvFilePath = "csv/persons.csv";
+    InputStream file        = DB.class.getClassLoader().getResourceAsStream(csvFilePath);
+    if (file == null) {
+      System.err.println("locations.csv file null");
+      return;
+    }
+    try (CSVReader reader = new CSVReaderBuilder(new InputStreamReader(file, StandardCharsets.UTF_8))
+        .withCSVParser(new CSVParserBuilder().withSeparator('\t').build())
+        .build()) {
+      String[] nextLine;
+      while ((nextLine = reader.readNext()) != null) {
+        if (nextLine.length > 1) {
+          PERSONS.add(new Word(nextLine[0], nextLine[1]));
+        } else {
+          System.err.println("not enough column for location line");
+        }
+      }
+    } catch (Exception e) {
+      e.printStackTrace();
+    }
+    System.out.println(PERSONS.size() + " persons imported");
   }
 
   // @todo to finish
   private static void initLocations() {
-    LOCATION.add(new Location("f dar", "l dar", "à la maison", "à la maison"));
-    LOCATION.add(new Location("fel khemda", "l khedma", "au travail", "au travail"));
-    LOCATION.add(new Location("berra", "berra", "dehors", "dehors"));
-    LOCATION.add(new Location("lberra", "lberra", "à l'extérieur", "à l'extérieur"));
-    LOCATION.add(new Location("dekhel", "dekhel", "dedans", "dedans"));
-    LOCATION.add(new Location("ldekhel", "ldekhel", "à l'interieur", "à l'interieur"));
-    LOCATION.add(new Location("3andi", "3andi", "chez moi", "chez moi"));
-    LOCATION.add(new Location("3andek", "3andek", "chez toi", "chez toi"));
-    LOCATION.add(new Location("3andou", "3andou", "chez lui", "chez lui"));
-    LOCATION.add(new Location("3andha", "3andha", "chez elle", "chez elle"));
-    LOCATION.add(new Location("3and Redouane", "3and Redouane", "chez Redouane", "chez Redouane"));
-    LOCATION.add(new Location("3andna", "3andna", "chez nous", "chez nous"));
-    LOCATION.add(new Location("3andkoum", "3andkoum", "chez vous", "chez vous"));
-    LOCATION.add(new Location("3andhoum", "3andhoum", "chez eux", "chez eux"));
-    LOCATION.add(new Location("fel 7ouma", "lel 7ouma", "au quartier", "au quartier"));
-    LOCATION.add(new Location("fel mdina", "lel mdina", "dans la ville", "dans la ville"));
-    LOCATION.add(new Location("fel 7anout", "lel 7anout", "au magasin", "au magasin"));
-    LOCATION.add(new Location(null, "hna", null, "ici"));
-    LOCATION.add(new Location("lfou9", "lfou9", "en haut", "en haut"));
-    LOCATION.add(new Location("lte7t", "lte7t", "en bas", "en bas"));
-    LOCATION.add(new Location("9addam", "9addam", "devant", "devant"));
-    LOCATION.add(new Location("melor", "melor", "derrière", "derrière"));
-    LOCATION.add(new Location("f tri9", null, "sur la route", null));
-    LOCATION.add(new Location("f lemsid", "lemsid", "à l'école", "à l'école"));
-    LOCATION.add(new Location("f sbital", "lsbital", "à l'hôpital", "à l'hôpital"));
+    String      csvFilePath = "csv/locations.csv";
+    InputStream file        = DB.class.getClassLoader().getResourceAsStream(csvFilePath);
+    if (file == null) {
+      System.err.println("locations.csv file null");
+      return;
+    }
+    try (CSVReader reader = new CSVReaderBuilder(new InputStreamReader(file, StandardCharsets.UTF_8))
+        .withCSVParser(new CSVParserBuilder().withSeparator('\t').build())
+        .build()) {
+      String[] nextLine;
+      while ((nextLine = reader.readNext()) != null) {
+        if (nextLine.length > 3) {
+          LOCATIONS.add(new Location(nextLine[0], nextLine[1], nextLine[2], nextLine[3]));
+        } else if (nextLine.length > 1) {
+          LOCATIONS.add(new Location(nextLine[0], nextLine[1]));
+        } else {
+          System.err.println("not enough column for location line");
+        }
+      }
+    } catch (Exception e) {
+      e.printStackTrace();
+    }
+    System.out.println(LOCATIONS.size() + " locations imported");
   }
 
   public static void initAbstractPronouns() throws IOException {
@@ -101,7 +164,7 @@ public class DB {
         e.printStackTrace();
       }
     }
-    System.out.println(VERBS + " verbs loaded");
+    System.out.println(VERBS.size() + " verbs loaded");
   }
 
   public static void initAdjectives() {
