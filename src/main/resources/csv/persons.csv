@@ -1,7 +1,8 @@
-khou	frère
-khawa	frères
-kht	soeur
-khouatet	soeurs
-bnet	filles
-wled	fils
-drari	enfants
+khou	frère	M	TRUE
+khawa	frères	M	FALSE
+kht	soeur	F	TRUE
+khouatet	soeurs	F	FALSE
+bnet	filles	F	FALSE
+wled	garçons	M	TRUE
+drari	enfants	M	FALSE
+djar	voisin	M	TRUE

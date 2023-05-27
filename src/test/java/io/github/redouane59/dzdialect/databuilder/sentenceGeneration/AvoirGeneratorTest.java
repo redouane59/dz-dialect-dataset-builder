@@ -7,6 +7,7 @@ import io.github.redouane59.dzdialect.datasetbuilder.enumerations.Tense;
 import io.github.redouane59.dzdialect.datasetbuilder.sentence.DTO.SentenceDTO;
 import io.github.redouane59.dzdialect.datasetbuilder.sentence.generators.PVSentenceGenerator;
 import io.github.redouane59.dzdialect.datasetbuilder.verb.Verb;
+import io.github.redouane59.dzdialect.datasetbuilder.word.concrets.GenderedWord;
 import io.github.redouane59.dzdialect.datasetbuilder.word.concrets.PossessiveWord;
 import io.github.redouane59.dzdialect.datasetbuilder.word.concrets.Word;
 import java.io.IOException;
@@ -108,24 +109,27 @@ public class AvoirGeneratorTest {
   @Test
   public void generateBrotherSentences() {
 
-    Word brother = DB.PERSONS.stream().filter(p -> p.getTranslationValue(Lang.FR).equals("frère")).findFirst().get();
+    List<Word> words = List.of(
+        DB.PERSONS.stream().filter(p -> p.getTranslationValue(Lang.FR).equals("frère")).findFirst().get()
+    );
 
     List<Tense> tenses = List.of(Tense.PRESENT);
     for (PossessiveWord pronoun : DB.PERSONAL_PRONOUNS.getValues()) {
       for (Tense tense : tenses) {
-        Optional<PossessiveWord> dzEndingOpt = DB.BROTHER_ENDING.stream().filter(
-            p -> p.isSingular() == pronoun.isSingular()
-                 && p.getPossession() == pronoun.getPossession()
-                 && (p.getGender() == pronoun.getGender() || p.getGender() == Gender.X)
-        ).findFirst();
-        if (dzEndingOpt.isPresent()) {
-          SentenceDTO sentenceDTO = new SentenceDTO(generator.getSentence(verb, pronoun, tense));
-          printSentence(sentenceDTO.getDz() + " " + brother.getTranslationValue(Lang.DZ) + dzEndingOpt.get().getTranslationValue(Lang.DZ),
-                        sentenceDTO.getFr() + " un " + brother.getTranslationValue(Lang.FR));
-        } else {
-          System.err.println("not present");
+        for (Word w : words) {
+          Optional<PossessiveWord> dzEndingOpt = DB.BROTHER_ENDING.stream().filter(
+              p -> p.isSingular() == pronoun.isSingular()
+                   && p.getPossession() == pronoun.getPossession()
+                   && (p.getGender() == pronoun.getGender() || p.getGender() == Gender.X)
+          ).findFirst();
+          if (dzEndingOpt.isPresent()) {
+            SentenceDTO sentenceDTO = new SentenceDTO(generator.getSentence(verb, pronoun, tense));
+            printSentence(sentenceDTO.getDz() + " " + w.getTranslationValue(Lang.DZ) + dzEndingOpt.get().getTranslationValue(Lang.DZ),
+                          sentenceDTO.getFr() + " un " + w.getTranslationValue(Lang.FR));
+          } else {
+            System.err.println("not present");
+          }
         }
-
       }
     }
   }
@@ -133,30 +137,40 @@ public class AvoirGeneratorTest {
   @Test
   public void generateSisterSentences() {
 
-    Word sister = DB.PERSONS.stream().filter(p -> p.getTranslationValue(Lang.FR).equals("soeur")).findFirst().get();
+    List<GenderedWord> words = List.of(
+        DB.PERSONS.stream().filter(p -> p.getTranslationValue(Lang.FR).equals("soeur")).findFirst().get(),
+        DB.PERSONS.stream().filter(p -> p.getTranslationValue(Lang.FR).equals("voisin")).findFirst().get()
+    );
 
     List<Tense> tenses = List.of(Tense.PRESENT);
-    for (PossessiveWord pronoun : DB.PERSONAL_PRONOUNS.getValues()) {
-      for (Tense tense : tenses) {
-        Optional<PossessiveWord> dzEndingOpt = DB.SISTER_ENDING.stream().filter(
-            p -> p.isSingular() == pronoun.isSingular()
-                 && p.getPossession() == pronoun.getPossession()
-                 && (p.getGender() == pronoun.getGender() || p.getGender() == Gender.X)
-        ).findFirst();
-        if (dzEndingOpt.isPresent()) {
-          SentenceDTO sentenceDTO = new SentenceDTO(generator.getSentence(verb, pronoun, tense));
-          printSentence(sentenceDTO.getDz() + " " + sister.getTranslationValue(Lang.DZ) + dzEndingOpt.get().getTranslationValue(Lang.DZ),
-                        sentenceDTO.getFr() + " une " + sister.getTranslationValue(Lang.FR));
-        } else {
-          System.err.println("not present");
+    for (GenderedWord w : words) {
+      String frenchArticle = " un ";
+      if (w.getGender() == Gender.F) {
+        frenchArticle = " une ";
+      }
+      for (PossessiveWord pronoun : DB.PERSONAL_PRONOUNS.getValues()) {
+        for (Tense tense : tenses) {
+          Optional<PossessiveWord> dzEndingOpt = DB.SISTER_ENDING.stream().filter(
+              p -> p.isSingular() == pronoun.isSingular()
+                   && p.getPossession() == pronoun.getPossession()
+                   && (p.getGender() == pronoun.getGender() || p.getGender() == Gender.X)
+          ).findFirst();
+          if (dzEndingOpt.isPresent()) {
+            SentenceDTO sentenceDTO = new SentenceDTO(generator.getSentence(verb, pronoun, tense));
+            printSentence(sentenceDTO.getDz() + " " + w.getTranslationValue(Lang.DZ) + dzEndingOpt.get().getTranslationValue(Lang.DZ),
+                          sentenceDTO.getFr() + frenchArticle + w.getTranslationValue(Lang.FR));
+          } else {
+            System.err.println("not present");
+          }
         }
-
       }
     }
   }
 
-
   public void printSentence(String dz, String fr) {
+    dz = dz.replace("khtn", "khotn")
+           .replace("khth", "khoth")
+           .replace("khtk", "khotk");
     System.out.println(dz + "," + fr);
   }
 

@@ -26,6 +26,10 @@ public class GenderedWord extends Word {
     this.singular = singular;
   }
 
+  public GenderedWord(String dz, String fr, Gender gender, boolean singular) {
+    this(List.of(new Translation(Lang.DZ, dz), new Translation(Lang.FR, fr)), gender, singular);
+  }
+
   public Gender getGender(Lang lang) {
     if (this.getTranslation(lang).isEmpty()) {
       return gender;

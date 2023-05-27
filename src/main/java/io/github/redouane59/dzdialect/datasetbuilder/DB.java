@@ -11,10 +11,10 @@ import io.github.redouane59.dzdialect.datasetbuilder.helper.ResourceList;
 import io.github.redouane59.dzdialect.datasetbuilder.noun.Noun;
 import io.github.redouane59.dzdialect.datasetbuilder.pronoun.AbstractPronouns;
 import io.github.redouane59.dzdialect.datasetbuilder.verb.Verb;
+import io.github.redouane59.dzdialect.datasetbuilder.word.concrets.GenderedWord;
 import io.github.redouane59.dzdialect.datasetbuilder.word.concrets.Location;
 import io.github.redouane59.dzdialect.datasetbuilder.word.concrets.Possession;
 import io.github.redouane59.dzdialect.datasetbuilder.word.concrets.PossessiveWord;
-import io.github.redouane59.dzdialect.datasetbuilder.word.concrets.Word;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
@@ -30,14 +30,14 @@ import java.util.stream.Collectors;
 
 public class DB {
 
-  public final static Set<Verb>        VERBS      = new HashSet<>();
-  public final static Set<Adjective>   ADJECTIVES = new HashSet<>();
-  public final static Set<Noun>        NOUNS      = new HashSet<>();
-  public static       Verb             AUX_ETRE;
-  public static       Verb             AUX_AVOIR;
-  public static       AbstractPronouns PERSONAL_PRONOUNS;
-  public static       Set<Location>    LOCATIONS  = new HashSet<>();
-  public static       Set<Word>        PERSONS    = new HashSet<>();
+  public final static Set<Verb>         VERBS      = new HashSet<>();
+  public final static Set<Adjective>    ADJECTIVES = new HashSet<>();
+  public final static Set<Noun>         NOUNS      = new HashSet<>();
+  public static       Verb              AUX_ETRE;
+  public static       Verb              AUX_AVOIR;
+  public static       AbstractPronouns  PERSONAL_PRONOUNS;
+  public static       Set<Location>     LOCATIONS  = new HashSet<>();
+  public static       Set<GenderedWord> PERSONS    = new HashSet<>();
 
   // to fix
   public static List<PossessiveWord> BROTHER_ENDING = List.of(
@@ -92,8 +92,8 @@ public class DB {
         .build()) {
       String[] nextLine;
       while ((nextLine = reader.readNext()) != null) {
-        if (nextLine.length > 1) {
-          PERSONS.add(new Word(nextLine[0], nextLine[1]));
+        if (nextLine.length > 3) {
+          PERSONS.add(new GenderedWord(nextLine[0], nextLine[1], Gender.valueOf(nextLine[2]), Boolean.parseBoolean(nextLine[3])));
         } else {
           System.err.println("not enough column for location line");
         }
