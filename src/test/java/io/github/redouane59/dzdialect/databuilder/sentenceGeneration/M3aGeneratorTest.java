@@ -5,6 +5,7 @@ import io.github.redouane59.dzdialect.datasetbuilder.enumerations.Gender;
 import io.github.redouane59.dzdialect.datasetbuilder.enumerations.Lang;
 import io.github.redouane59.dzdialect.datasetbuilder.enumerations.Tense;
 import io.github.redouane59.dzdialect.datasetbuilder.sentence.DTO.SentenceDTO;
+import io.github.redouane59.dzdialect.datasetbuilder.sentence.Sentence;
 import io.github.redouane59.dzdialect.datasetbuilder.sentence.generators.PVSentenceGenerator;
 import io.github.redouane59.dzdialect.datasetbuilder.verb.Verb;
 import io.github.redouane59.dzdialect.datasetbuilder.word.concrets.Possession;
@@ -19,7 +20,10 @@ import org.junit.jupiter.api.Test;
 public class M3aGeneratorTest {
 
   PVSentenceGenerator generator = new PVSentenceGenerator();
-  List<Verb>          verbs     = List.of(DB.AUX_ETRE, DB.VERBS.stream().filter(v -> v.getId().equals("aller")).findFirst().get());
+  List<Verb>          verbs     = List.of(
+      DB.AUX_ETRE, DB.VERBS.stream().filter(v -> v.getId().equals("aller")).findFirst().get(),
+      DB.AUX_ETRE, DB.VERBS.stream().filter(v -> v.getId().equals("parler")).findFirst().get()
+  );
 
   @BeforeAll
   public static void init() throws IOException {
@@ -44,12 +48,17 @@ public class M3aGeneratorTest {
     for (Verb verb : verbs) {
       for (Tense tense : tenses) {
         for (PossessiveWord pronoun : DB.PERSONAL_PRONOUNS.getValues()) {
-          SentenceDTO sentenceDTO = new SentenceDTO(generator.getSentence(verb, pronoun, tense));
-          for (PossessiveWord w : with) {
-            if ((pronoun.getPossession() != w.getPossession()) || pronoun.getPossession() == Possession.OTHER) {
-              printSentence(sentenceDTO.getDz() + " " + w.getTranslationValue(Lang.DZ),
-                            sentenceDTO.getFr() + " " + w.getTranslationValue(Lang.FR));
+          Sentence sentence = generator.getSentence(verb, pronoun, tense);
+          if (sentence != null) {
+            SentenceDTO sentenceDTO = new SentenceDTO(sentence);
+            for (PossessiveWord w : with) {
+              if ((pronoun.getPossession() != w.getPossession()) || pronoun.getPossession() == Possession.OTHER) {
+                printSentence(sentenceDTO.getDz() + " " + w.getTranslationValue(Lang.DZ),
+                              sentenceDTO.getFr() + " " + w.getTranslationValue(Lang.FR));
+              }
             }
+          } else {
+            System.err.println("no sentence generated for " + verb.getId() + " " + pronoun.getId() + " " + tense.getId());
           }
         }
       }
