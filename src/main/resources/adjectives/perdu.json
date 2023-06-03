@@ -1,45 +1,58 @@
 {
-  "id" : "perdu",
-  "wordType" : "ADJECTIVE",
-  "values" : [ {
-    "translations" : [ {
-      "lang" : "FR",
-      "value" : "perdu"
-    }, {
-      "lang" : "DZ",
-      "value" : "mbaher",
-      "ar_value" : "مبحر"
-    } ],
-    "gender" : "M",
-    "singular" : true,
-    "tense" : null
-  }, {
-    "translations" : [ {
-      "lang" : "FR",
-      "value" : "perdue"
-    }, {
-      "lang" : "DZ",
-      "value" : "mbahra",
-      "ar_value" : "مبحرة"
-    } ],
-    "gender" : "F",
-    "singular" : true,
-    "tense" : null
-  }, {
-    "translations" : [ {
-      "lang" : "FR",
-      "value" : "perdu(e)s"
-    }, {
-      "lang" : "DZ",
-      "value" : "mbahrin",
-      "ar_value" : "مبحرين"
-    } ],
-    "gender" : "X",
-    "singular" : false,
-    "tense" : null
-  } ],
-  "temporal" : false,
-  "definitive" : false,
-  "possible_nouns" : [ ],
-  "fr_aux_avoir" : false
+  "id": "perdu",
+  "wordType": "ADJECTIVE",
+  "values": [
+    {
+      "translations": [
+        {
+          "lang": "FR",
+          "value": "perdu"
+        },
+        {
+          "lang": "DZ",
+          "value": "mbaher",
+          "ar_value": "مبحر"
+        }
+      ],
+      "gender": "M",
+      "singular": true,
+      "tense": null
+    },
+    {
+      "translations": [
+        {
+          "lang": "FR",
+          "value": "perdue"
+        },
+        {
+          "lang": "DZ",
+          "value": "mbahra",
+          "ar_value": "مبحرة"
+        }
+      ],
+      "gender": "F",
+      "singular": true,
+      "tense": null
+    },
+    {
+      "translations": [
+        {
+          "lang": "FR",
+          "value": "perdues"
+        },
+        {
+          "lang": "DZ",
+          "value": "mbahrin",
+          "ar_value": "مبحرين"
+        }
+      ],
+      "gender": "X",
+      "singular": false,
+      "tense": null
+    }
+  ],
+  "temporal": false,
+  "definitive": false,
+  "possible_nouns": [],
+  "fr_aux_avoir": false
 }

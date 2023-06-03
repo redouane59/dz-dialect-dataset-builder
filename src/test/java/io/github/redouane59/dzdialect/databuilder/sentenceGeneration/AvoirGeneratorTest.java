@@ -1,5 +1,7 @@
 package io.github.redouane59.dzdialect.databuilder.sentenceGeneration;
 
+import static io.github.redouane59.dzdialect.datasetbuilder.helper.PrintHelper.printSentence;
+
 import io.github.redouane59.dzdialect.datasetbuilder.DB;
 import io.github.redouane59.dzdialect.datasetbuilder.enumerations.Gender;
 import io.github.redouane59.dzdialect.datasetbuilder.enumerations.Lang;
@@ -165,13 +167,6 @@ public class AvoirGeneratorTest {
         }
       }
     }
-  }
-
-  public void printSentence(String dz, String fr) {
-    dz = dz.replace("khtn", "khotn")
-           .replace("khth", "khoth")
-           .replace("khtk", "khotk");
-    System.out.println(dz + "," + fr);
   }
 
 

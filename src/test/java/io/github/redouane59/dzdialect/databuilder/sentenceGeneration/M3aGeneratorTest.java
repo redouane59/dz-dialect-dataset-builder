@@ -1,5 +1,7 @@
 package io.github.redouane59.dzdialect.databuilder.sentenceGeneration;
 
+import static io.github.redouane59.dzdialect.datasetbuilder.helper.PrintHelper.printSentence;
+
 import io.github.redouane59.dzdialect.datasetbuilder.DB;
 import io.github.redouane59.dzdialect.datasetbuilder.enumerations.Gender;
 import io.github.redouane59.dzdialect.datasetbuilder.enumerations.Lang;
@@ -10,19 +12,26 @@ import io.github.redouane59.dzdialect.datasetbuilder.sentence.generators.PVSente
 import io.github.redouane59.dzdialect.datasetbuilder.verb.Verb;
 import io.github.redouane59.dzdialect.datasetbuilder.word.concrets.Possession;
 import io.github.redouane59.dzdialect.datasetbuilder.word.concrets.PossessiveWord;
+import io.github.redouane59.dzdialect.datasetbuilder.word.concrets.TimeExpression;
 import io.github.redouane59.dzdialect.datasetbuilder.word.concrets.Word;
 import java.io.IOException;
 import java.util.List;
 import java.util.Set;
+import java.util.stream.Collectors;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
 public class M3aGeneratorTest {
 
-  PVSentenceGenerator generator = new PVSentenceGenerator();
-  List<Verb>          verbs     = List.of(
+  PVSentenceGenerator generator           = new PVSentenceGenerator();
+  Set<TimeExpression> pastTimeExpressions = DB.TIMES_EXPRESSIONS.stream().filter(t -> t.getTense() == Tense.PAST).collect(Collectors.toSet());
+
+  List<Verb> verbs = List.of(
       DB.AUX_ETRE, DB.VERBS.stream().filter(v -> v.getId().equals("aller")).findFirst().get(),
-      DB.AUX_ETRE, DB.VERBS.stream().filter(v -> v.getId().equals("parler")).findFirst().get()
+      DB.AUX_ETRE, DB.VERBS.stream().filter(v -> v.getId().equals("parler")).findFirst().get(),
+      DB.AUX_ETRE, DB.VERBS.stream().filter(v -> v.getId().equals("dormir")).findFirst().get(),
+      DB.AUX_ETRE, DB.VERBS.stream().filter(v -> v.getId().equals("manger")).findFirst().get(),
+      DB.AUX_ETRE, DB.VERBS.stream().filter(v -> v.getId().equals("venir")).findFirst().get()
   );
 
   @BeforeAll
@@ -53,8 +62,16 @@ public class M3aGeneratorTest {
             SentenceDTO sentenceDTO = new SentenceDTO(sentence);
             for (PossessiveWord w : with) {
               if ((pronoun.getPossession() != w.getPossession()) || pronoun.getPossession() == Possession.OTHER) {
-                printSentence(sentenceDTO.getDz() + " " + w.getTranslationValue(Lang.DZ),
-                              sentenceDTO.getFr() + " " + w.getTranslationValue(Lang.FR));
+                String dzSentence = sentenceDTO.getDz() + " " + w.getTranslationValue(Lang.DZ);
+                String frSentence = sentenceDTO.getFr() + " " + w.getTranslationValue(Lang.FR);
+                if (tense == Tense.PAST) {
+                  for (TimeExpression timeExpression : pastTimeExpressions) {
+                    printSentence(timeExpression.getTranslationValue(Lang.DZ) + " " + dzSentence,
+                                  timeExpression.getTranslationValue(Lang.FR) + " " + frSentence);
+                  }
+                } else {
+                  printSentence(dzSentence, frSentence);
+                }
               }
             }
           } else {
@@ -78,9 +95,18 @@ public class M3aGeneratorTest {
         for (PossessiveWord pronoun : DB.PERSONAL_PRONOUNS.getValues()) {
           for (Word ending : DB.BROTHER_ENDING) {
             SentenceDTO sentenceDTO = new SentenceDTO(generator.getSentence(verb, pronoun, tense));
-            printSentence(sentenceDTO.getDz() + withDz + brother.getTranslationValue(Lang.DZ) + ending.getTranslationValue(Lang.DZ),
-                          sentenceDTO.getFr() + withFr + ending.getTranslationValue(Lang.FR) + " " + brother.getTranslationValue(
-                              Lang.FR));
+            String      dzSentence  = sentenceDTO.getDz() + withDz + brother.getTranslationValue(Lang.DZ) + ending.getTranslationValue(Lang.DZ);
+            String frSentence = sentenceDTO.getFr() + withFr + ending.getTranslationValue(Lang.FR) + " " + brother.getTranslationValue(
+                Lang.FR);
+            if (tense == Tense.PAST) {
+              for (TimeExpression timeExpression : pastTimeExpressions) {
+                printSentence(timeExpression.getTranslationValue(Lang.DZ) + " " + dzSentence,
+                              timeExpression.getTranslationValue(Lang.FR) + " " + frSentence);
+              }
+            } else {
+              printSentence(dzSentence, frSentence);
+            }
+
           }
           for (Word ending : DB.SISTER_ENDING) {
             SentenceDTO sentenceDTO = new SentenceDTO(generator.getSentence(verb, pronoun, tense));
@@ -91,11 +117,6 @@ public class M3aGeneratorTest {
         }
       }
     }
-  }
-
-
-  public void printSentence(String dz, String fr) {
-    System.out.println(dz + "," + fr);
   }
 
 

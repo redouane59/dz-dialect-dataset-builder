@@ -7,6 +7,7 @@ import com.opencsv.CSVReader;
 import com.opencsv.CSVReaderBuilder;
 import io.github.redouane59.dzdialect.datasetbuilder.adjective.Adjective;
 import io.github.redouane59.dzdialect.datasetbuilder.enumerations.Gender;
+import io.github.redouane59.dzdialect.datasetbuilder.enumerations.Tense;
 import io.github.redouane59.dzdialect.datasetbuilder.helper.ResourceList;
 import io.github.redouane59.dzdialect.datasetbuilder.noun.Noun;
 import io.github.redouane59.dzdialect.datasetbuilder.pronoun.AbstractPronouns;
@@ -15,6 +16,7 @@ import io.github.redouane59.dzdialect.datasetbuilder.word.concrets.GenderedWord;
 import io.github.redouane59.dzdialect.datasetbuilder.word.concrets.Location;
 import io.github.redouane59.dzdialect.datasetbuilder.word.concrets.Possession;
 import io.github.redouane59.dzdialect.datasetbuilder.word.concrets.PossessiveWord;
+import io.github.redouane59.dzdialect.datasetbuilder.word.concrets.TimeExpression;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
@@ -30,14 +32,15 @@ import java.util.stream.Collectors;
 
 public class DB {
 
-  public final static Set<Verb>         VERBS      = new HashSet<>();
-  public final static Set<Adjective>    ADJECTIVES = new HashSet<>();
-  public final static Set<Noun>         NOUNS      = new HashSet<>();
-  public static       Verb              AUX_ETRE;
-  public static       Verb              AUX_AVOIR;
-  public static       AbstractPronouns  PERSONAL_PRONOUNS;
-  public static       Set<Location>     LOCATIONS  = new HashSet<>();
-  public static       Set<GenderedWord> PERSONS    = new HashSet<>();
+  public final static Set<Verb>           VERBS             = new HashSet<>();
+  public final static Set<Adjective>      ADJECTIVES        = new HashSet<>();
+  public final static Set<Noun>           NOUNS             = new HashSet<>();
+  public static       Verb                AUX_ETRE;
+  public static       Verb                AUX_AVOIR;
+  public static       AbstractPronouns    PERSONAL_PRONOUNS;
+  public static       Set<Location>       LOCATIONS         = new HashSet<>();
+  public static       Set<GenderedWord>   PERSONS           = new HashSet<>();
+  public static       Set<TimeExpression> TIMES_EXPRESSIONS = new HashSet<>();
 
   // to fix
   public static List<PossessiveWord> BROTHER_ENDING = List.of(
@@ -75,6 +78,7 @@ public class DB {
     initNouns();
     initLocations();
     initPersons();
+    initTimeExpressions();
     AUX_ETRE  = DB.VERBS.stream().filter(v -> v.getId().equals("être")).findFirst().get();
     AUX_AVOIR = DB.VERBS.stream().filter(v -> v.getId().equals("avoir")).findFirst().get();
     System.out.println();
@@ -129,6 +133,28 @@ public class DB {
       e.printStackTrace();
     }
     System.out.println(LOCATIONS.size() + " locations imported");
+  }
+
+  private static void initTimeExpressions() {
+    String      csvFilePath = "csv/time.csv";
+    InputStream file        = DB.class.getClassLoader().getResourceAsStream(csvFilePath);
+    if (file == null) {
+      System.err.println("time.csv file null");
+      return;
+    }
+    try (CSVReader reader = new CSVReaderBuilder(new InputStreamReader(file, StandardCharsets.UTF_8))
+        .withCSVParser(new CSVParserBuilder().withSeparator('\t').build())
+        .build()) {
+      String[] nextLine;
+      while ((nextLine = reader.readNext()) != null) {
+        if (nextLine.length > 2) {
+          TIMES_EXPRESSIONS.add(new TimeExpression(nextLine[0], nextLine[1], Tense.valueOf(nextLine[2])));
+        }
+      }
+    } catch (Exception e) {
+      e.printStackTrace();
+    }
+    System.out.println(TIMES_EXPRESSIONS.size() + " time expressions imported");
   }
 
   public static void initAbstractPronouns() throws IOException {
@@ -225,5 +251,6 @@ public class DB {
     }
     System.out.println(NOUNS.size() + " adjectives loaded");
   }
+
 
 }

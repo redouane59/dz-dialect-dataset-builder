@@ -1,45 +1,58 @@
 {
-  "id" : "occupé",
-  "wordType" : "ADJECTIVE",
-  "values" : [ {
-    "translations" : [ {
-      "lang" : "FR",
-      "value" : "occupé"
-    }, {
-      "lang" : "DZ",
-      "value" : "lati",
-      "ar_value" : "لاتي"
-    } ],
-    "gender" : "M",
-    "singular" : true,
-    "tense" : null
-  }, {
-    "translations" : [ {
-      "lang" : "FR",
-      "value" : "occupée"
-    }, {
-      "lang" : "DZ",
-      "value" : "latya",
-      "ar_value" : "لاتية"
-    } ],
-    "gender" : "F",
-    "singular" : true,
-    "tense" : null
-  }, {
-    "translations" : [ {
-      "lang" : "FR",
-      "value" : "occupé(e)s"
-    }, {
-      "lang" : "DZ",
-      "value" : "latyin",
-      "ar_value" : "لاتيين"
-    } ],
-    "gender" : "X",
-    "singular" : false,
-    "tense" : null
-  } ],
-  "temporal" : false,
-  "definitive" : false,
-  "possible_nouns" : [ ],
-  "fr_aux_avoir" : false
+  "id": "occupé",
+  "wordType": "ADJECTIVE",
+  "values": [
+    {
+      "translations": [
+        {
+          "lang": "FR",
+          "value": "occupé"
+        },
+        {
+          "lang": "DZ",
+          "value": "lati",
+          "ar_value": "لاتي"
+        }
+      ],
+      "gender": "M",
+      "singular": true,
+      "tense": null
+    },
+    {
+      "translations": [
+        {
+          "lang": "FR",
+          "value": "occupée"
+        },
+        {
+          "lang": "DZ",
+          "value": "latya",
+          "ar_value": "لاتية"
+        }
+      ],
+      "gender": "F",
+      "singular": true,
+      "tense": null
+    },
+    {
+      "translations": [
+        {
+          "lang": "FR",
+          "value": "occupées"
+        },
+        {
+          "lang": "DZ",
+          "value": "latyin",
+          "ar_value": "لاتيين"
+        }
+      ],
+      "gender": "X",
+      "singular": false,
+      "tense": null
+    }
+  ],
+  "temporal": false,
+  "definitive": false,
+  "possible_nouns": [],
+  "fr_aux_avoir": false
 }

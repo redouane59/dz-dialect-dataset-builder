@@ -1,45 +1,58 @@
 {
-  "id" : "cher",
-  "wordType" : "ADJECTIVE",
-  "values" : [ {
-    "translations" : [ {
-      "lang" : "FR",
-      "value" : "cher"
-    }, {
-      "lang" : "DZ",
-      "value" : "ghali",
-      "ar_value" : "غالي"
-    } ],
-    "gender" : "M",
-    "singular" : true,
-    "tense" : null
-  }, {
-    "translations" : [ {
-      "lang" : "FR",
-      "value" : "chère"
-    }, {
-      "lang" : "DZ",
-      "value" : "ghalia",
-      "ar_value" : "غاليا"
-    } ],
-    "gender" : "F",
-    "singular" : true,
-    "tense" : null
-  }, {
-    "translations" : [ {
-      "lang" : "FR",
-      "value" : "cher(e)s"
-    }, {
-      "lang" : "DZ",
-      "value" : "ghaliyin",
-      "ar_value" : "غاليين"
-    } ],
-    "gender" : "X",
-    "singular" : false,
-    "tense" : null
-  } ],
-  "temporal" : false,
-  "definitive" : false,
-  "possible_nouns" : [ ],
-  "fr_aux_avoir" : false
+  "id": "cher",
+  "wordType": "ADJECTIVE",
+  "values": [
+    {
+      "translations": [
+        {
+          "lang": "FR",
+          "value": "cher"
+        },
+        {
+          "lang": "DZ",
+          "value": "ghali",
+          "ar_value": "غالي"
+        }
+      ],
+      "gender": "M",
+      "singular": true,
+      "tense": null
+    },
+    {
+      "translations": [
+        {
+          "lang": "FR",
+          "value": "chère"
+        },
+        {
+          "lang": "DZ",
+          "value": "ghalia",
+          "ar_value": "غاليا"
+        }
+      ],
+      "gender": "F",
+      "singular": true,
+      "tense": null
+    },
+    {
+      "translations": [
+        {
+          "lang": "FR",
+          "value": "cheres"
+        },
+        {
+          "lang": "DZ",
+          "value": "ghaliyin",
+          "ar_value": "غاليين"
+        }
+      ],
+      "gender": "X",
+      "singular": false,
+      "tense": null
+    }
+  ],
+  "temporal": false,
+  "definitive": false,
+  "possible_nouns": [],
+  "fr_aux_avoir": false
 }

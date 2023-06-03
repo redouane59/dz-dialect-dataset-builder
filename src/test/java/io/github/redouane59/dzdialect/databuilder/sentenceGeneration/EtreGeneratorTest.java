@@ -1,8 +1,9 @@
 package io.github.redouane59.dzdialect.databuilder.sentenceGeneration;
 
+import static io.github.redouane59.dzdialect.datasetbuilder.helper.PrintHelper.printSentence;
+
 import io.github.redouane59.dzdialect.datasetbuilder.DB;
 import io.github.redouane59.dzdialect.datasetbuilder.adjective.Adjective;
-import io.github.redouane59.dzdialect.datasetbuilder.enumerations.Gender;
 import io.github.redouane59.dzdialect.datasetbuilder.enumerations.Lang;
 import io.github.redouane59.dzdialect.datasetbuilder.enumerations.Tense;
 import io.github.redouane59.dzdialect.datasetbuilder.noun.NounType;
@@ -13,6 +14,7 @@ import io.github.redouane59.dzdialect.datasetbuilder.word.concrets.GenderedWord;
 import io.github.redouane59.dzdialect.datasetbuilder.word.concrets.Location;
 import io.github.redouane59.dzdialect.datasetbuilder.word.concrets.Possession;
 import io.github.redouane59.dzdialect.datasetbuilder.word.concrets.PossessiveWord;
+import io.github.redouane59.dzdialect.datasetbuilder.word.concrets.TimeExpression;
 import java.io.IOException;
 import java.util.List;
 import java.util.Optional;
@@ -35,14 +37,24 @@ public class EtreGeneratorTest {
   @Test
   public void generateLocationSentences() {
 
-    List<Tense> tenses = List.of(Tense.PRESENT, Tense.PAST);
+    List<Tense>         tenses              = List.of(Tense.PRESENT, Tense.PAST);
+    Set<TimeExpression> pastTimeExpressions = DB.TIMES_EXPRESSIONS.stream().filter(t -> t.getTense() == Tense.PAST).collect(Collectors.toSet());
 
     for (PossessiveWord pronoun : DB.PERSONAL_PRONOUNS.getValues()) {
       for (Tense tense : tenses) {
         SentenceDTO sentenceDTO = new SentenceDTO(generator.getSentence(verb, pronoun, tense));
         for (Location w : DB.LOCATIONS) {
-          printSentence(sentenceDTO.getDz() + " " + w.getAt().getTranslationValue(Lang.DZ),
-                        sentenceDTO.getFr() + " " + w.getAt().getTranslationValue(Lang.FR));
+          String dzSentence = sentenceDTO.getDz() + " " + w.getAt().getTranslationValue(Lang.DZ);
+          String frSentence = sentenceDTO.getFr() + " " + w.getAt().getTranslationValue(Lang.FR);
+          if (tense == Tense.PAST) {
+            for (TimeExpression timeExpression : pastTimeExpressions) {
+              printSentence(timeExpression.getTranslationValue(Lang.DZ) + " " + dzSentence,
+                            timeExpression.getTranslationValue(Lang.FR) + " " + frSentence);
+            }
+          } else {
+            printSentence(dzSentence, frSentence);
+          }
+
         }
       }
     }
@@ -85,21 +97,6 @@ public class EtreGeneratorTest {
                                                                 .getTranslationValue(Lang.FR)));
         }
       }
-    }
-  }
-
-  public void printSentence(String dz, String fr) {
-    System.out.println(dz + "," + fr);
-  }
-
-
-  public void printGenderInfo(PossessiveWord pronoun) {
-    if (pronoun.getGender().equals(Gender.F)) {
-      System.out.println(" (dit à une femme)");
-    } else if (pronoun.getGender().equals(Gender.M)) {
-      System.out.println(" (dit à un homme)");
-    } else {
-      System.out.println();
     }
   }
 

@@ -1,45 +1,58 @@
 {
-  "id" : "brûlé",
-  "wordType" : "ADJECTIVE",
-  "values" : [ {
-    "translations" : [ {
-      "lang" : "FR",
-      "value" : "brûlé"
-    }, {
-      "lang" : "DZ",
-      "value" : "ma7ro9",
-      "ar_value" : "محروق"
-    } ],
-    "gender" : "M",
-    "singular" : true,
-    "tense" : null
-  }, {
-    "translations" : [ {
-      "lang" : "FR",
-      "value" : "brûlée"
-    }, {
-      "lang" : "DZ",
-      "value" : "ma7ro9a",
-      "ar_value" : "محروقة"
-    } ],
-    "gender" : "F",
-    "singular" : true,
-    "tense" : null
-  }, {
-    "translations" : [ {
-      "lang" : "FR",
-      "value" : "brûlé(e)s"
-    }, {
-      "lang" : "DZ",
-      "value" : "ma7ro9in",
-      "ar_value" : "محروقين"
-    } ],
-    "gender" : "X",
-    "singular" : false,
-    "tense" : null
-  } ],
-  "temporal" : false,
-  "definitive" : false,
-  "possible_nouns" : [ ],
-  "fr_aux_avoir" : false
+  "id": "brûlé",
+  "wordType": "ADJECTIVE",
+  "values": [
+    {
+      "translations": [
+        {
+          "lang": "FR",
+          "value": "brûlé"
+        },
+        {
+          "lang": "DZ",
+          "value": "ma7ro9",
+          "ar_value": "محروق"
+        }
+      ],
+      "gender": "M",
+      "singular": true,
+      "tense": null
+    },
+    {
+      "translations": [
+        {
+          "lang": "FR",
+          "value": "brûlée"
+        },
+        {
+          "lang": "DZ",
+          "value": "ma7ro9a",
+          "ar_value": "محروقة"
+        }
+      ],
+      "gender": "F",
+      "singular": true,
+      "tense": null
+    },
+    {
+      "translations": [
+        {
+          "lang": "FR",
+          "value": "brûlées"
+        },
+        {
+          "lang": "DZ",
+          "value": "ma7ro9in",
+          "ar_value": "محروقين"
+        }
+      ],
+      "gender": "X",
+      "singular": false,
+      "tense": null
+    }
+  ],
+  "temporal": false,
+  "definitive": false,
+  "possible_nouns": [],
+  "fr_aux_avoir": false
 }

@@ -1,45 +1,58 @@
 {
-  "id" : "absent",
-  "wordType" : "ADJECTIVE",
-  "values" : [ {
-    "translations" : [ {
-      "lang" : "FR",
-      "value" : "absent"
-    }, {
-      "lang" : "DZ",
-      "value" : "ghayeb",
-      "ar_value" : "غايب"
-    } ],
-    "gender" : "M",
-    "singular" : true,
-    "tense" : null
-  }, {
-    "translations" : [ {
-      "lang" : "FR",
-      "value" : "absente"
-    }, {
-      "lang" : "DZ",
-      "value" : "ghayba",
-      "ar_value" : "غايبة"
-    } ],
-    "gender" : "F",
-    "singular" : true,
-    "tense" : null
-  }, {
-    "translations" : [ {
-      "lang" : "FR",
-      "value" : "absent(e)s"
-    }, {
-      "lang" : "DZ",
-      "value" : "ghaybin",
-      "ar_value" : "غايبين"
-    } ],
-    "gender" : "X",
-    "singular" : false,
-    "tense" : null
-  } ],
-  "temporal" : false,
-  "definitive" : false,
-  "possible_nouns" : [ ],
-  "fr_aux_avoir" : false
+  "id": "absent",
+  "wordType": "ADJECTIVE",
+  "values": [
+    {
+      "translations": [
+        {
+          "lang": "FR",
+          "value": "absent"
+        },
+        {
+          "lang": "DZ",
+          "value": "ghayeb",
+          "ar_value": "غايب"
+        }
+      ],
+      "gender": "M",
+      "singular": true,
+      "tense": null
+    },
+    {
+      "translations": [
+        {
+          "lang": "FR",
+          "value": "absente"
+        },
+        {
+          "lang": "DZ",
+          "value": "ghayba",
+          "ar_value": "غايبة"
+        }
+      ],
+      "gender": "F",
+      "singular": true,
+      "tense": null
+    },
+    {
+      "translations": [
+        {
+          "lang": "FR",
+          "value": "absentes"
+        },
+        {
+          "lang": "DZ",
+          "value": "ghaybin",
+          "ar_value": "غايبين"
+        }
+      ],
+      "gender": "X",
+      "singular": false,
+      "tense": null
+    }
+  ],
+  "temporal": false,
+  "definitive": false,
+  "possible_nouns": [],
+  "fr_aux_avoir": false
 }

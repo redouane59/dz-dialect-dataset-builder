@@ -1,45 +1,58 @@
 {
-  "id" : "éveillé",
-  "wordType" : "ADJECTIVE",
-  "values" : [ {
-    "translations" : [ {
-      "lang" : "FR",
-      "value" : "éveillé"
-    }, {
-      "lang" : "DZ",
-      "value" : "nayed",
-      "ar_value" : "نايد"
-    } ],
-    "gender" : "M",
-    "singular" : true,
-    "tense" : null
-  }, {
-    "translations" : [ {
-      "lang" : "FR",
-      "value" : "éveillée"
-    }, {
-      "lang" : "DZ",
-      "value" : "nayda",
-      "ar_value" : "نايدة"
-    } ],
-    "gender" : "F",
-    "singular" : true,
-    "tense" : null
-  }, {
-    "translations" : [ {
-      "lang" : "FR",
-      "value" : "éveillé(e)s"
-    }, {
-      "lang" : "DZ",
-      "value" : "naydin",
-      "ar_value" : "نايدين"
-    } ],
-    "gender" : "X",
-    "singular" : false,
-    "tense" : null
-  } ],
-  "temporal" : false,
-  "definitive" : false,
-  "possible_nouns" : [ ],
-  "fr_aux_avoir" : false
+  "id": "éveillé",
+  "wordType": "ADJECTIVE",
+  "values": [
+    {
+      "translations": [
+        {
+          "lang": "FR",
+          "value": "éveillé"
+        },
+        {
+          "lang": "DZ",
+          "value": "nayed",
+          "ar_value": "نايد"
+        }
+      ],
+      "gender": "M",
+      "singular": true,
+      "tense": null
+    },
+    {
+      "translations": [
+        {
+          "lang": "FR",
+          "value": "éveillée"
+        },
+        {
+          "lang": "DZ",
+          "value": "nayda",
+          "ar_value": "نايدة"
+        }
+      ],
+      "gender": "F",
+      "singular": true,
+      "tense": null
+    },
+    {
+      "translations": [
+        {
+          "lang": "FR",
+          "value": "éveillées"
+        },
+        {
+          "lang": "DZ",
+          "value": "naydin",
+          "ar_value": "نايدين"
+        }
+      ],
+      "gender": "X",
+      "singular": false,
+      "tense": null
+    }
+  ],
+  "temporal": false,
+  "definitive": false,
+  "possible_nouns": [],
+  "fr_aux_avoir": false
 }
